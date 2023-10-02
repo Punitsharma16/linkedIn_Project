@@ -1,0 +1,89 @@
+.signup-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: whitesmoke;
+    height: 100%;
+    width: 100%;
+
+}
+.signup-logo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(15, 15, 179);
+    font-weight: bold;
+}
+.signup-container p{
+    font-size: 2rem;
+}
+.signup-form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    border-radius: 0.6rem;
+    background-color: #fff;
+    width: 25rem;
+    height: auto;
+}
+.form{
+    display: flex;
+    flex-direction: column;
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+}
+.form input{
+    padding: 0.7rem;
+    width: 23rem;
+    border: 1px solid black;
+    margin-top: 0.3rem;
+    border-radius: 0.4rem;
+    font-size: 1.05rem;
+}
+.agree-links{
+    font-size: 0.9rem;
+}
+.join-btn{
+    border: none;
+    color: #fff;
+    padding: 1rem;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: rgb(39, 39, 241);
+    border-radius: 2rem;
+}
+.join-btn:hover{
+    cursor: pointer;
+    background-color: rgb(12, 12, 177);
+}
+a{
+    text-decoration: none;
+}
+.get-help-div{
+    margin: 1.5rem;
+}
+.footer{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.footer a{
+    font-size: 14px;
+    color: rgb(144, 144, 224);
+}
+.footer a:hover{
+    color: rgb(69, 69, 236);
+    text-decoration: underline;
+}
+.footer-logo{
+    display: flex;
+    font-weight: bold;
+    align-items: center;
+    gap: 0.2rem;
+}
+.footer-logo p{
+    margin-left: 0.5rem;
+}
