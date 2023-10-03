@@ -5,6 +5,8 @@ import { useState } from "react";
 import axios from "axios";
 import { getHeaderWithProjectIDAndBody } from "../utils/config";
 export const Login = ()=>{
+    const [isError,setIsError] = useState(false);
+    const [showError, setShowError] = useState('');
     const navigate = useNavigate();
     const [userInfo,setUserInfo] = useState({
         email:'',
@@ -24,9 +26,17 @@ export const Login = ()=>{
                     userInfo,
                     headerConfig,
                 )
+                setIsError(false);
                 console.log(responce);
+                if(responce.data.token){
+                    sessionStorage.setItem("authToken",responce.data.token);
+                    console.log(responce.data.token);
+                    sessionStorage.setItem("userInfo",JSON.stringify(responce.data.data));
+                    navigate('/home');
+                }
             } catch (error) {
-                console.log(error);
+                setIsError(true);
+                setShowError(error.response.data.message);
             }
     }
 
@@ -37,7 +47,7 @@ export const Login = ()=>{
 
     return(
         <>
-        <Navbar/>
+        {/* <Navbar/> */}
         <main className="login-page"> 
             <section>
             <p className="form-heading">Welcome to your professional community</p>
@@ -47,6 +57,10 @@ export const Login = ()=>{
                 <br/>
                 <label htmlFor="password">Password : </label>
                 <input type="password" name="password" id="password" value={userInfo.password} onChange={handleInfo} placeholder="Enter your password.."/>
+                
+                {
+                    isError && <p style={{color:'red'}}>{`* ${showError}`}</p>
+                }
                 <br/>
                 <input className="login-btn" type="submit" value='Sign in'/>
                 <br/>

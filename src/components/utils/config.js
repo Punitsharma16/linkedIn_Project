@@ -4,3 +4,8 @@ export const getHeaderWithProjectIDAndBody= ()=>{
         headers:{projectId:PROJECT_ID, 'Content-Type': 'application/json'}
     }
 }
+export const getHeaderWithProjectID = ()=>{
+    return{
+        headers: {projectId:PROJECT_ID}
+    }
+}

@@ -4,6 +4,7 @@ import { useState } from "react"
 import { getHeaderWithProjectIDAndBody } from "../utils/config"
 import axios from "axios"
 export const Signup = ()=>{
+    const navigate = useNavigate();
     const [userInfo,setUserInfo] = useState({
         name:'',
         email:'',
@@ -28,7 +29,7 @@ export const Signup = ()=>{
                 sessionStorage.setItem("authToken",responce.data.token);
                 console.log(responce.data.token);
                 sessionStorage.setItem("userInfo",JSON.stringify(responce.data.data.user));
-                // console.log(responce.data.data.user);
+                navigate('/login');
             }
         } catch (error) {
             console.log(error.response.data.message);
@@ -50,13 +51,13 @@ export const Signup = ()=>{
         <main className="signup-form">
             <form className="form" onSubmit={submitForm}>
             <label htmlFor="username">Username</label>
-            <input type="text" name="name" value={userInfo.name} id="username" onChange={handleInfo} placeholder="Enter your name.."/>
+            <input type="text" name="name" value={userInfo.name} id="username" onChange={handleInfo} placeholder="Enter your name.." required/>
             <br/>
             <label htmlFor="email">Email</label>
-            <input type="email" name="email" id="email" value={userInfo.email} onChange={handleInfo} placeholder="Enter email address.."/>
+            <input type="email" name="email" id="email" value={userInfo.email} onChange={handleInfo} placeholder="Enter email address.." required/>
             <br/>
             <label htmlFor="password">Password </label>
-            <input type="password" name="password" id="password" value={userInfo.password} onChange={handleInfo} placeholder="Enter your password.."/>
+            <input type="password" name="password" id="password" value={userInfo.password} onChange={handleInfo} placeholder="Enter your password.."required/>
             <br/>
             <div className="agree-links">By clicking Agree & Join, you agree to the LinkedIn <a href="https://www.linkedin.com/legal/user-agreement?trk=registration-frontend_join-form-user-agreement">User Agreement</a>, <a href="https://www.linkedin.com/legal/privacy-policy?trk=registration-frontend_join-form-privacy-policy">Privacy Policy</a>, and <a href="https://www.linkedin.com/legal/cookie-policy?trk=registration-frontend_join-form-cookie-policy">Cookie Policy</a>.</div>
             <br/>
