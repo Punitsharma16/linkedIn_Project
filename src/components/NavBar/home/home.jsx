@@ -8,23 +8,44 @@ import { PostCard } from "./Postcard"
 export const Home = ()=>{
     console.log('token',token);
     const [postList,setPostlist] = useState([]);
+    const [page,setPage] = useState(1);
+    const [isLoading,setIsLoading] = useState(false);
 
     const fetchPosts = async ()=>{
         const config = getHeaderWithProjectID();
         try {
             const posts = await axios.get(
-                'https://academics.newtonschool.co/api/v1/linkedin/post',
+                `https://academics.newtonschool.co/api/v1/linkedin/post?limit=10&page=${page}`,
                 config,
             )
             console.log(posts);
-            setPostlist(posts.data.data)
+            const newData = posts.data.data;
+            setPostlist((prev)=>[...prev,...newData]);
+            setIsLoading(false);
         } catch (error) {
+            setIsLoading(true);
             console.log(error);
         }
     };
     useEffect(()=>{
+        setIsLoading(true);
         fetchPosts();   
-    },[]);
+    },[page]);
+
+    const handleScrolling = ()=>{
+        const a = document.documentElement.scrollTop;
+		const b = document.documentElement.scrollHeight;
+		const c = a+window.innerHeight+100;
+        if(!isLoading && c>b){
+            setPage(prev=>prev+1);
+        }
+    }
+
+    useEffect(()=>{
+        window.addEventListener("scroll", handleScrolling);
+
+    return () =>  window.removeEventListener("scroll", handleScrolling);
+    },[page]);
     console.log(postList);
     return(
         <main>
@@ -34,7 +55,7 @@ export const Home = ()=>{
             <NavLink to="/home">Home</NavLink>
             </div>
             </section> */}
-            <section>
+            <section className="all-post">
             {
                 postList.map((post,i)=>(<PostCard key={i} {...post}/>))
             }

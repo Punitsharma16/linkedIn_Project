@@ -1,3 +1,4 @@
+import {token} from '../NavBar/Assets/AuthToken'
 const PROJECT_ID = " f104bi07c490";
 export const getHeaderWithProjectIDAndBody= ()=>{
     return{
@@ -7,5 +8,10 @@ export const getHeaderWithProjectIDAndBody= ()=>{
 export const getHeaderWithProjectID = ()=>{
     return{
         headers: {projectId:PROJECT_ID}
+    }
+}
+export const getHeaderWithAuthTokenAndProjectID = ()=>{
+    return{
+        headers: { 'Authorization': `Bearer ${token}`,projectId:PROJECT_ID}
     }
 }

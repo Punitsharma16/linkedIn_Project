@@ -14,18 +14,18 @@ import { AuthNavigater } from './components/utils/AuthNavigater';
 function App(){
   return(
     <main>
+      <AppNavbar/>
       <Routes>
         {/* <Route path='/' element={<AppNavbar/>}/> */}
-        <Route path="/login" element={<Login/>}/>
+        <Route path="/" element={<Login/>}/>
         <Route path='/signup' element={ <Signup/>}/>
-        <Route path='/home' element={<AuthNavigater><Home/></AuthNavigater>}/>
+        <Route path='/home' element={<Home/>}/>
         <Route path='/mynetwork' element={<MyNetwork/>}/>
         <Route path='/message' element={<Message/>}/>
         <Route path='/jobs' element={<Jobs/>}/>
         <Route path='/notification' element={<Notification/>}/>
         <Route path='/profile' element={<Profile/>}/>
       </Routes>
-      <AppNavbar/>
     </main>
   )
 }
