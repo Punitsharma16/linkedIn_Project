@@ -1,0 +1,5 @@
+{
+  "editor.formatOnSaveMode": "modifications",
+  "files.refactoring.autoSave": false,
+  "json.format.enable": false
+}
