@@ -5,9 +5,9 @@
     gap: 0.3rem;
 }
 .searchBar input{
-    height: 1.8rem;
+    height: 1.6rem;
     width: 20rem;
-    font-size: 1rem;
+    font-size: 0.9rem;
     padding: 0.3rem;
     border: 1px solid black;
     border-radius: 0.5rem;

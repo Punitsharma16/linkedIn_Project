@@ -6,15 +6,14 @@ import { Notification } from "./notification/notification"
 import { Profile } from "./Profile/profile"
 import { SearchBar } from "./Search/searchBar"
 import "./navbar.css"
-import { TryPrimium } from "./tryPrimium"
+import { TryPrimium } from "./Pages/tryPrimium"
 import homeSvg from "../../components/NavBar/home/home.svg"
-import networkSvg from ".././NavBar/myNetwrok/mynetwork.svg"
+import networkSvg from "../../components/NavBar/myNetwrok/Svgs/mynetwork.svg"
 import msgSvg from ".././NavBar/messaging/message.svg"
 import jobSvg from ".././NavBar/Jobs/jobs.svg"
 import notificationSvg from ".././NavBar/notification/notification.svg"
 import profileSvg from "../NavBar/Profile/profile.svg"
 import { NavLink } from "react-router-dom"
-
 
 
 export const AppNavbar = ()=>{

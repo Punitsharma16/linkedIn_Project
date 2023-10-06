@@ -25,6 +25,7 @@ export const Signup = ()=>{
                 headerConfig,
             );
             console.log(responce);
+            console.log(responce.data.data.profileImage);
             if(responce.data.token){
                 sessionStorage.setItem("authToken",responce.data.token);
                 console.log(responce.data.token);
@@ -35,6 +36,7 @@ export const Signup = ()=>{
             console.log(error.response.data.message);
         }
     }
+    
     const submitForm = (e)=>{
         e.preventDefault();
         signup({...userInfo,appType:'linkedin'});
@@ -64,7 +66,7 @@ export const Signup = ()=>{
             <button className="join-btn">Agree & Join</button>
             </form>
             <br/>
-            <div>Already on LinkedIn? <Link to="/">Sign in</Link></div>
+            <div>Already on LinkedIn? <Link to="/login">Sign in</Link></div>
         </main>
         <div className="get-help-div">Looking to create a page for a business? <a href="https://www.linkedin.com/help/linkedin/answer/a543852?trk=registration-frontend_join-form-page-help-link">Get help</a></div>
     </section>

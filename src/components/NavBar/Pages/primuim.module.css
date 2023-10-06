@@ -1,0 +1,78 @@
+
+.imageBoxes{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    /* border: 1px solid black; */
+    border-radius: 0.6rem;
+    margin: 0.5rem;
+    background-color: whitesmoke;
+}
+.premiumBox{
+    display: flex;
+    font-size: 24px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-weight: 550;
+    /* margin: 1rem; */
+    border-radius: 0.5rem;
+    background-color: #ac6161d8;
+    padding: 2rem;
+    padding-bottom: 3rem;
+}
+.premiumBox span {
+    font-weight: 300;
+    font-size: 20px;
+}
+.premiumDiv{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 18rem;
+    justify-content: center;
+    height: 17rem;
+    padding: 1rem;
+    margin-top: 2rem;
+    margin: 3rem;
+}
+.premiumDiv h4{
+    font-size: 18px;
+    font-weight: 500;
+}
+.viewProfile{
+    height: 18rem;
+    width: 16rem;
+}
+.hiring{
+    height: 9rem;
+    width: 14rem;
+}
+.courses{
+    height: 7.5rem;
+    width: 14rem;
+}
+.heading{
+    font-weight: 500;
+    font-size: 14px;
+}
+.content {
+    font-size: 14px;
+    font-weight: 200;
+    color: #535151;
+}
+.premiumBtn{
+    border: none;
+    border: 1px solid blue;
+    background-color: whitesmoke;
+    padding: 0.6rem;
+    font-weight: 600;
+    width: 7rem;
+    color: blue;
+    border-radius: 0.2rem;
+    margin-bottom: 1rem;
+}
+.premiumBtn:hover{
+    cursor: pointer;
+    background-color:rgb(252, 238, 238) ;
+}

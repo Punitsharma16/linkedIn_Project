@@ -1,0 +1,58 @@
+.connetionsContainer{
+    border-radius: 0.5rem;
+    width: 60%;
+    background-color: #ffffff;
+    margin: 1rem;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    padding: 1rem;
+}
+.searchBar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #d1cccc;
+}
+.searchBar input{
+    width: 16rem;
+    margin: 0.5rem;
+    padding: 0.5rem;
+    font-size: 14px;
+    border-radius: 0.3rem;
+    border: 1px solid #3d3d3d;
+
+}
+.userBox{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #d1cccc;
+}
+.container{
+    display: flex;
+    justify-content: center;
+}
+.user{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin: 0.5rem;
+}
+.user img{
+    width: 5rem;
+    height: 5rem;
+    border-radius: 50%;
+}
+.msgBtn{
+    width: 7rem;
+    height: 2rem;
+    border: 1px solid blue;
+    color: rgb(45, 45, 184);
+    font-size: 14px;
+    border-radius: 1rem;
+    font-weight: 600;
+}
+.msgBtn:hover{
+    cursor: pointer;
+    background-color: #ffffff;
+}

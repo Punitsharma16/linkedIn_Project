@@ -1,0 +1,31 @@
+.mainContainer{
+    display: flex;
+    justify-content: center;
+    margin: 1rem;
+}
+.container{
+    border-radius: 0.5rem;
+    background-color: #fff;
+    width: 60%;
+    height: 30rem;
+    padding: 0.5rem;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.container p{
+    font-size: 18px;
+    font-weight: 300;
+    padding-left: 1rem;
+}
+.container span{
+    padding: 1rem;
+    font-size: 14px;
+}
+.container div{
+    display: flex;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10rem;
+    font-size: 40px;
+
+}

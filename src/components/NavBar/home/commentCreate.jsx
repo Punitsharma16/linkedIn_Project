@@ -3,6 +3,7 @@ import { getHeaderWithAuthTokenAndProjectID } from "../../utils/config";
 import axios from "axios";
 import {token} from '../Assets/AuthToken'
 import './home.css'
+// import { useEffect } from "react";
 
 export const CreateComment = ({id})=>{
     const [newComment,setNewComment] = useState({
@@ -17,15 +18,12 @@ export const CreateComment = ({id})=>{
 //  console.log(token);
 
     const createNewComment = async(newComment)=>{
-        const config = {
-            'Authorization': `Bearer ${token}`,
-            projectID: "f104bi07c490",
-        };
+        const config = getHeaderWithAuthTokenAndProjectID();
         try {
             const res = await axios.post(
                 `https://academics.newtonschool.co/api/v1/linkedin/comment/${id}`,
-                config,
                 newComment,
+                config,
             )
             console.log(res);
         } catch (error) {
@@ -35,8 +33,10 @@ export const CreateComment = ({id})=>{
 
     const submitComment = (e)=>{
         e.preventDefault();
-        createNewComment({...newComment});
+        createNewComment(newComment);
     };
+
+    
     return(
         <main className="comment-Box">
             <input type="text" name="content" id="comment" value={newComment.content} onChange={handleComment} />

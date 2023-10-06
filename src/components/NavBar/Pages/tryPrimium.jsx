@@ -1,5 +1,5 @@
 export const TryPrimium = ()=>{
     return(
-        <a href="/">Try Primium</a>
+        <a href="/premium">Try Primium</a>
     )
 }

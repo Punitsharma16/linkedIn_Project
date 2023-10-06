@@ -5,6 +5,7 @@ import { Comments } from './comment';
 import './home.css'
 import { LikeButton } from './like';
 import likeSvg from './like.svg'
+import CreatePost from './PostCreate';
 export const PostCard = (props)=>{
     const {title,content,author:{name,profileImage},_id,likeCount,commentCount,channel} = props;
     console.log(props);
@@ -13,6 +14,7 @@ export const PostCard = (props)=>{
 
     return(
         <main className='post-container'>
+            
             <section className='post-profile'>
                 <img className='profile-image' src={profileImage} alt="profile.." />
                 

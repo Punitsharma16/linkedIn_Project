@@ -4,22 +4,29 @@ import {token} from '../Assets/AuthToken'
 import { useState } from 'react';
 import { getHeaderWithAuthTokenAndProjectID } from '../../utils/config';
 import axios from 'axios';
-export const LikeButton = ({id,likeCount})=>{
-    console.log(id,likeCount);
-    console.log(token);
-    const [counts,setCounts] = useState(likeCount);
-    const handleUpvote = async ()=>{
-        const config = getHeaderWithAuthTokenAndProjectID();
-        try {
+// export const LikeButton = ({id,likeCount})=>{
+//     console.log(id,likeCount);
+//     console.log(token);
+//     const [counts,setCounts] = useState({likeCount:likeCount});
+    export const LikeButton = ({ id, likeCount }) => {
+        console.log(id, likeCount);
+        console.log(token);
+        const [counts, setCounts] = useState({ likeCount: likeCount });
+        const handleUpvote = async () => {
+          const config = getHeaderWithAuthTokenAndProjectID();
+          try {
             const upvote = await axios.post(
-                `https://academics.newtonschool.co/api/v1/linkedin/like/${id}`,
-                config,
-            )
-            setCounts(counts+1);
-        } catch (error) {
+              `https://academics.newtonschool.co/api/v1/linkedin/like/${id}`,
+              {},
+              { ...config }
+            );
+            console.log(upvote);
+            // Update the state immediately
+            setCounts({ likeCount: counts.likeCount + 1 });
+          } catch (error) {
             console.log(error);
-        }
-    }
+          }
+        };
     return(
         <section>
             

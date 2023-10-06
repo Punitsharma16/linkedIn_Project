@@ -10,7 +10,7 @@ export const Comments = ({id})=>{
     
     const [AllComments,setAllComments] = useState([]);
     const [showComments,setShowComments] = useState(false);
-    console.log("postID",id);
+    // console.log("postID",id);
     // console.log(token);
     const fetchComments = async ()=>{
         const config = getHeaderWithAuthTokenAndProjectID();
@@ -19,8 +19,8 @@ export const Comments = ({id})=>{
                 `https://academics.newtonschool.co/api/v1/linkedin/post/${id}/comments`,
                 config,
             );
-            console.log(comments.data.data);
-            setAllComments(comments.data.data);
+            // console.log(comments.data.data);
+            setAllComments((comments.data.data.reverse()));
         } catch (error) {
             console.log(error);
         }
@@ -28,6 +28,10 @@ export const Comments = ({id})=>{
     useEffect(()=>{
         fetchComments();
     },[id,token]);
+    console.log((AllComments));
+    // const reverseComments = AllComments.reverse();
+    // console.log(reverseComments);
+    
 
     return(
         <main>
@@ -42,6 +46,7 @@ export const Comments = ({id})=>{
                         return <div key={i}>{comment.content}</div>
                     })
                 }
+                
             </section>
             }
         </main>

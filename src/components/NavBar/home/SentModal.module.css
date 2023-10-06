@@ -1,0 +1,64 @@
+.modalBox{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: #e2d9d9;
+    margin: 0.3rem;
+    padding: 0.1rem;
+    height: 5rem;
+    border-radius: 0.3rem;
+    width: 90%;
+}
+.modalElement{
+    display: flex;
+    width: 25rem;
+    gap: 1rem;
+    /* margin: 1rem; */
+}
+.modalElement div p{
+    font-size: 16px;
+    font-weight: 500;
+}
+.modalElement div p span {
+    font-size: 12px;
+    font-weight: 300;
+}
+.modalElement img{
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+}
+.checkbox input{
+    width: 1.2rem;
+    height: 1.2rem;
+    border-radius: 50%;
+}
+.modal{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    padding: 2rem;
+    width: 40%;
+    border-radius: 0.3rem;
+    height: 22rem;
+}
+.crossBtn{
+    border: none;
+    font-weight: bold;
+    font-size: 20px;
+    align-self: last baseline;
+    border-radius: 50%;
+}
+.sentBtn{
+    padding: 0.5rem;
+    width: 90%;
+    margin: 0.6rem;
+    border-radius: 0.6rem;
+    border: none;
+}
+.sentBtn:hover{
+    cursor: pointer;
+    background-color: rgb(214, 167, 105);
+}

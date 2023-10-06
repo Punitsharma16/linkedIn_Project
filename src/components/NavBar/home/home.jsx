@@ -5,6 +5,11 @@ import { useEffect, useState } from "react"
 import { getHeaderWithProjectID } from "../../utils/config"
 import axios from "axios"
 import { PostCard } from "./Postcard"
+import { LinkedinNews } from "./News"
+import { HomeProfile } from "./HomeProfile"
+import { DiscoverContainer } from "./discoverMore"
+import { AddHome } from "../Assets/add-Home"
+import CreatePost from "./PostCreate"
 export const Home = ()=>{
     console.log('token',token);
     const [postList,setPostlist] = useState([]);
@@ -40,25 +45,32 @@ export const Home = ()=>{
             setPage(prev=>prev+1);
         }
     }
+    console.log(token);
 
     useEffect(()=>{
         window.addEventListener("scroll", handleScrolling);
 
     return () =>  window.removeEventListener("scroll", handleScrolling);
-    },[page]);
+    },[isLoading]);
     console.log(postList);
     return(
-        <main>
-            {/* <section>
-            <div className="home-logo">
-            <img src={homeSvg} alt="logo.." />
-            <NavLink to="/home">Home</NavLink>
-            </div>
-            </section> */}
+        <main className="home-Page">
             <section className="all-post">
-            {
+                <section>
+                        <HomeProfile/>
+                        <DiscoverContainer/>
+                </section>
+                <section>
+                <CreatePost/>
+                {
                 postList.map((post,i)=>(<PostCard key={i} {...post}/>))
-            }
+                 }
+                </section>
+                <section>
+                <LinkedinNews/>
+                <AddHome/>
+                </section>
+            
             </section>
         </main>
         

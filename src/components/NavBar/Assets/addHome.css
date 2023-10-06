@@ -1,0 +1,36 @@
+.imgOfAdd{
+    height: 5rem;
+    width: 5rem;
+}
+.add-Box{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 17rem;
+    padding: 0.6rem;
+    border-radius: 0.5rem;
+    background-color: #fff;
+    margin-left: 1rem;
+    font-weight: 300;
+}
+.add-image{
+    display: flex;
+    gap: 1rem;
+}
+.add-box-text{
+    font-size: 14px;
+    font-weight: 300;
+    color: #868484;
+}
+.add-follow-btn{
+    padding: 0.6rem 1.3rem;
+    border-radius: 0.5rem;
+    background-color: whitesmoke;
+    border: 1px solid rgb(67, 67, 196);
+    margin-bottom: 0.6rem;
+    color: rgb(67, 67, 196);
+    font-weight: 500;
+}

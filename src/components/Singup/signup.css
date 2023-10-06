@@ -43,6 +43,11 @@
     border-radius: 0.4rem;
     font-size: 1.05rem;
 }
+.form input[type='file']{
+    width: 6rem;
+    height: 6rem;
+    border-radius: 50%;
+}
 .agree-links{
     font-size: 0.9rem;
 }
