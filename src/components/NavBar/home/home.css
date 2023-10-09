@@ -11,6 +11,7 @@
     align-items: center; 
      justify-content: center; 
   } */
+
   .all-post{
     display: flex;
     /* flex-direction: column; */
@@ -140,17 +141,21 @@
     margin: 1rem;
     align-items: center;
     align-content: center;
-    padding: 1rem;
+    /* padding: 1rem; */
     font-size: 14px;
     border-radius: 0.5rem;
     background-color: whitesmoke;
-    width: 13rem;
+    width: 14rem;
 }
 .image{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    background: linear-gradient(to bottom,#5e5c5c67 30% ,whitesmoke 25%);
+
 }
 /* discover box */
 

@@ -3,9 +3,9 @@ import './addHome.css'
 import { useState } from "react"
 export const AddHome = ()=>{
     const [isClicked,setIsClicked] = useState(false);
-    const handleButton = ()=>{
-        setIsClicked(!isClicked);
-    }
+    // const handleButton = ()=>{
+    //     setIsClicked(!isClicked);
+    // }
     const userData = sessionStorage.getItem('userInfo');
     const dataObject = JSON.parse(userData);
     const {name} = dataObject;

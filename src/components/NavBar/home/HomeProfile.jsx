@@ -15,16 +15,17 @@ export const HomeProfile = ()=>{
             {/* <ProfileImage/> */}
             {/* <h3>Aarav Sharma</h3> */}
             <hr />
-            <section style={{display:'flex',justifyContent:'space-between'}}>
-            <p>connections</p>
-            <p>0</p>
+            <Link to="/mynetwork">
+            <section style={{display:'flex',justifyContent:'space-between',paddingLeft:'0.3rem',paddingRight:'0.3rem',color:'#3d3d3d'}}>
+            <p>connections <br /><span>Grow your network</span></p>
+            <p>4</p>
             </section>
-            <span>Grow your network</span>
+            </Link>
+            
             <hr />
-            <p>Access exclusive tools & insights</p>
-            <a href="/premium">Get hired faster. Try Premium free.</a>
+            <p style={{paddingLeft:'0.3rem',paddingRight:'0.3rem'}}>Access exclusive tools & insights <br /><a href="/premium" style={{textDecoration:'underline'}}>Get hired faster. Try Premium free.</a></p>
             <hr />
-            <p>My Items</p>
+            <p style={{paddingLeft:'0.3rem',paddingBottom:'0.5rem'}}>My Items</p>
         </main>
         
     )

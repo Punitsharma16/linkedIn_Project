@@ -16,7 +16,9 @@
     padding: 0.7rem;
     background-color: #fff;
     height: 2.5rem;
-    /* position: fixed; */
+    position: sticky;
+    top: 0rem;
+    width: 100%;
     
 }
 .link-logo {

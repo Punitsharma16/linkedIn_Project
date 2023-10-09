@@ -1,7 +1,7 @@
 import { NavLink } from "react-router-dom"
 import homeSvg from "./home.svg"
 import {token} from '../Assets/AuthToken'
-import { useEffect, useState } from "react"
+import { createContext, useEffect, useState } from "react"
 import { getHeaderWithProjectID } from "../../utils/config"
 import axios from "axios"
 import { PostCard } from "./Postcard"
@@ -10,6 +10,8 @@ import { HomeProfile } from "./HomeProfile"
 import { DiscoverContainer } from "./discoverMore"
 import { AddHome } from "../Assets/add-Home"
 import CreatePost from "./PostCreate"
+
+export const postListContext = createContext();
 export const Home = ()=>{
     console.log('token',token);
     const [postList,setPostlist] = useState([]);
@@ -51,7 +53,7 @@ export const Home = ()=>{
         window.addEventListener("scroll", handleScrolling);
 
     return () =>  window.removeEventListener("scroll", handleScrolling);
-    },[isLoading]);
+    },[]);
     console.log(postList);
     return(
         <main className="home-Page">
@@ -63,7 +65,13 @@ export const Home = ()=>{
                 <section>
                 <CreatePost/>
                 {
-                postList.map((post,i)=>(<PostCard key={i} {...post}/>))
+                postList.map((post,i)=>(
+                    <postListContext.Provider value={setPostlist}>
+                        <PostCard key={i} {...post}/>
+                    </postListContext.Provider>
+                        
+                
+                ))
                  }
                 </section>
                 <section>

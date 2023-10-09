@@ -1,0 +1,14 @@
+.modal{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 16rem;
+    width: 35rem;
+    background-color: #fff;
+    gap: 5rem;
+    border-radius: 0.5rem;
+}
+.modal button {
+    padding: 0.5rem;
+}

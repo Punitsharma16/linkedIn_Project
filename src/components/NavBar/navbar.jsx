@@ -64,8 +64,8 @@ export const AppNavbar = ()=>{
 
                <section>
                <div className="link-logo">
-            <img src={profileSvg} alt="logo.." />
-            <NavLink to="/profile">Profile</NavLink>
+            {/* <img src={profileSvg} alt="logo.." /> */}
+            <Profile/>
         </div>
                </section>
                 {/* <Profile/> */}

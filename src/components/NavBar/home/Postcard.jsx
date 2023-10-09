@@ -9,6 +9,8 @@ import CreatePost from './PostCreate';
 export const PostCard = (props)=>{
     const {title,content,author:{name,profileImage},_id,likeCount,commentCount,channel} = props;
     console.log(props);
+    const {setPostList} = props;
+
     // console.log(title);
     //  console.log(channel.owner);
 

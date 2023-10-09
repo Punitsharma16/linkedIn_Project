@@ -9,46 +9,32 @@ import events from './Svgs/events.svg'
 import news from './Svgs/NewsLetter.svg'
 import page from './Svgs/pages.svg'
 import connectBtn from './Svgs/connectBtn.svg'
-import { useState } from "react"
+import { useEffect, useState } from "react"
+import axios from "axios"
+import { getHeaderWithAuthTokenAndProjectID } from "../../utils/config"
+import { values } from "../home/home"
+import { IdValue } from "../home/comment"
 
 export const MyNetwork = ()=>{
-    const [connectValue,setConnectValue] = useState(false);
-    const peoples = [
-        {
-            name:'Aravindan Elango',
-            image: 'https://newton-project-resume-backend.s3.amazonaws.com/profileImage/64df3febdef71b475f0afb06.jpg',
-            work:'Embedded Developer',
-            connection: 'Based on you profile'
-        },
-        {
-            name:'Michelle Mayert',
-            image:'https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/1130.jpg',
-            work:'Data Science Hub',
-            connection:'Based on you profile'
-        },
-        {
-            name:'Diane Bogan',
-            image:'https://newton-project-resume-backend.s3.amazonaws.com/profileImage/64df3febdef71b475f0afb02.jpg',
-            work:'Tech Startups Space',
-            connection:'Based on you profile'
-        },
-        {
-            name:'Orlando Leannon',
-            image:'https://newton-project-resume-backend.s3.amazonaws.com/profileImage/64df3febdef71b475f0afae7.jpg',
-            work:'Mobile App Makers',
-            connection:'Based on you profile'
-        },
-        // {
-        //     name:'Terry Sauer',
-        //     image:'https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/1130.jpg',
-        //     work:'Data Science Hub',
-        //     connection:'Based on you profile'
-        // }
-    ]
+    const [connect1,setConnect1Value] = useState(false);
+    const [connect2,setConnect2Value] = useState(false);
+    const [connect3,setConnect3Value] = useState(false);
+    const [connect4,setConnect4Value] = useState(false);
 
-    const connectButton=()=>{
-        setConnectValue(!connectValue);
+    const fetchUser = async ()=>{
+        const config = getHeaderWithAuthTokenAndProjectID();
+        try {
+            const users = await axios.get(
+                `https://academics.newtonschool.co/api/v1/linkedin/user/:${"64e354cd7811e6621b579352"}`,
+            )
+            console.log(users);
+        } catch (error) {
+            console.log(error);
+        }
     }
+    useEffect(()=>{
+        fetchUser();
+    },[])
     return(
         <main className={style.MyNetwork}>
             <section >
@@ -104,19 +90,34 @@ export const MyNetwork = ()=>{
                 <section className={style.peopleContainer}>
                     <p>People you may know based on your recent activity</p>
                     <section className={style.knowPeoples}>
-                        {
-                            peoples.map((people)=>{
-                                return(
-                                    <main className={style.peoples}>
-                                        <img src={people.image} className={style.image} alt="img.." />
-                                        <span style={{fontWeight:'700'}}>{people.name}</span>
-                                        <span style={{fontWeight:'400',fontSize:"15px"}}>{people.work}</span>
-                                        <p style={{fontSize:'14px',marginTop:'2rem'}}>{people.connection}</p>
-                                        <button onClick={connectButton} className={style.connectBtn}><img src={connectBtn} alt="logo.." />{!connectValue?"Connect":"Pending.."}</button>
-                                    </main>
-                                )
-                            })
-                        }
+                        <main className={style.peoples}>
+                            <img src='https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/1130.jpg' className={style.image} alt="img.." />
+                            <span style={{fontWeight:'700'}}>Michelle Mayert</span>
+                            <span style={{fontWeight:'400',fontSize:"15px"}}>Embedded Developer</span>
+                            <p style={{fontSize:'14px',marginTop:'2rem'}}>Based on you profile</p>
+                            <button onClick={()=>setConnect1Value(!connect1)} className={style.connectBtn}><img src={connectBtn} alt="logo.." />{!connect1?"Connect":"Pending.."}</button>
+                        </main>
+                        <main className={style.peoples}>
+                            <img src='https://newton-project-resume-backend.s3.amazonaws.com/profileImage/64df3febdef71b475f0afb06.jpg' className={style.image} alt="img.." />
+                            <span style={{fontWeight:'700'}}>Aravindan Elango</span>
+                            <span style={{fontWeight:'400',fontSize:"15px"}}>Data Science Hub</span>
+                            <p style={{fontSize:'14px',marginTop:'2rem'}}>Based on you profile</p>
+                            <button onClick={()=>setConnect2Value(!connect2)} className={style.connectBtn}><img src={connectBtn} alt="logo.." />{!connect2?"Connect":"Pending.."}</button>
+                        </main>
+                        <main className={style.peoples}>
+                            <img src= 'https://newton-project-resume-backend.s3.amazonaws.com/profileImage/64df3febdef71b475f0afb02.jpg' className={style.image} alt="img.." />
+                            <span style={{fontWeight:'700'}}>Diane Bogan</span>
+                            <span style={{fontWeight:'400',fontSize:"15px"}}>Tech Startups Space</span>
+                            <p style={{fontSize:'14px',marginTop:'2rem'}}>Based on you profile</p>
+                            <button onClick={()=>setConnect3Value(!connect3)} className={style.connectBtn}><img src={connectBtn} alt="logo.." />{!connect3?"Connect":"Pending.."}</button>
+                        </main>
+                        <main className={style.peoples}>
+                            <img src='https://newton-project-resume-backend.s3.amazonaws.com/profileImage/64df3febdef71b475f0afae7.jpg' className={style.image} alt="img.." />
+                            <span style={{fontWeight:'700'}}>Orlando Leannon</span>
+                            <span style={{fontWeight:'400',fontSize:"15px"}}>Mobile App Makers</span>
+                            <p style={{fontSize:'14px',marginTop:'2rem'}}>Based on you profile</p>
+                            <button onClick={()=>setConnect4Value(!connect4)} className={style.connectBtn}><img src={connectBtn} alt="logo.." />{!connect4?"Connect":"Pending.."}</button>
+                        </main>
                     </section>
                 </section>
             </section>
