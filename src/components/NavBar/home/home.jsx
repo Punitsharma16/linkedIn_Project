@@ -13,7 +13,7 @@ import CreatePost from "./PostCreate"
 
 export const postListContext = createContext();
 export const Home = ()=>{
-    console.log('token',token);
+    // console.log('token',token);
     const [postList,setPostlist] = useState([]);
     const [page,setPage] = useState(1);
     const [isLoading,setIsLoading] = useState(false);
@@ -25,7 +25,7 @@ export const Home = ()=>{
                 `https://academics.newtonschool.co/api/v1/linkedin/post?limit=10&page=${page}`,
                 config,
             )
-            console.log(posts);
+            // console.log(posts);
             const newData = posts.data.data;
             setPostlist((prev)=>[...prev,...newData]);
             setIsLoading(false);
@@ -47,14 +47,14 @@ export const Home = ()=>{
             setPage(prev=>prev+1);
         }
     }
-    console.log(token);
+    // console.log(token);
 
     useEffect(()=>{
         window.addEventListener("scroll", handleScrolling);
 
     return () =>  window.removeEventListener("scroll", handleScrolling);
     },[]);
-    console.log(postList);
+    // console.log(postList);
     return(
         <main className="home-Page">
             <section className="all-post">
@@ -64,7 +64,7 @@ export const Home = ()=>{
                 </section>
                 <section>
                 <CreatePost/>
-                {
+                { 
                 postList.map((post,i)=>(
                     <postListContext.Provider value={setPostlist}>
                         <PostCard key={i} {...post}/>

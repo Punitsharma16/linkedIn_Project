@@ -46,14 +46,14 @@ export const LinkedinNews = ()=>{
         <p style={{fontWeight:"530"}}>LinkedIn News</p>
       <ul>
         {showMore ? items.map((item, index) => (
-            <section>
+            <section key={index}>
           <li key={index} className={index%2===0?'news-Even':'news-Odd'}>{item}</li>
           {
                 (!showMore && (index) % 2 === 0 && index !== items.length - 1) && <br/>
           }
           </section>
         )) : items.slice(0, 10).map((item, index) => (
-            <section>
+            <section key={index}>
                 <li key={index} className={index%2===0?'news-Even':'news-Odd'}>{item}</li>
             </section>
           

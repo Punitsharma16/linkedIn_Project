@@ -22,20 +22,20 @@ export const MyNetwork = ()=>{
     const [connect3,setConnect3Value] = useState(false);
     const [connect4,setConnect4Value] = useState(false);
 
-    const fetchUser = async ()=>{
-        const config = getHeaderWithAuthTokenAndProjectID();
-        try {
-            const users = await axios.get(
-                `https://academics.newtonschool.co/api/v1/linkedin/user/:${"64e354cd7811e6621b579352"}`,
-            )
-            console.log(users);
-        } catch (error) {
-            console.log(error);
-        }
-    }
-    useEffect(()=>{
-        fetchUser();
-    },[])
+    // const fetchUser = async ()=>{
+    //     const config = getHeaderWithAuthTokenAndProjectID();
+    //     try {
+    //         const users = await axios.get(
+    //             `https://academics.newtonschool.co/api/v1/linkedin/user/:${"64e354cd7811e6621b579352"}`,
+    //         )
+    //         // console.log(users);
+    //     } catch (error) {
+    //         console.log(error);
+    //     }
+    // }
+    // useEffect(()=>{
+    //     fetchUser();
+    // },[])
     return(
         <main className={style.MyNetwork}>
             <section >

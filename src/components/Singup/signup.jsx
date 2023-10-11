@@ -24,13 +24,13 @@ export const Signup = ()=>{
                 userInfo,
                 headerConfig,
             );
-            console.log(responce);
-            console.log(responce.data.data.profileImage);
+            // console.log(responce);
+            // console.log(responce.data.data.profileImage);
             if(responce.data.token){
                 sessionStorage.setItem("authToken",responce.data.token);
-                console.log(responce.data.token);
+                // console.log(responce.data.token);
                 sessionStorage.setItem("userInfo",JSON.stringify(responce.data.data.user));
-                navigate('/login');
+                navigate('/');
             }
         } catch (error) {
             console.log(error.response.data.message);

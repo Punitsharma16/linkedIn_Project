@@ -14,8 +14,8 @@ export const ProfileInfo = ()=>{
     const {name,email} = data;
 
     const logOutBtn = ()=>{
+        navigate('/');
         sessionStorage.clear();
-        navigate('/login');
     }
     return(
         <main>

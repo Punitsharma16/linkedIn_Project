@@ -14,7 +14,7 @@ function CreatePost() {
 //   console.log(token);
   // const data = JSON.stringify(newPost);
   // console.log(data);
- console.log(newPost);
+//  console.log(newPost);
   const handleSubmit = async (e) => {
     e.preventDefault();
     const config = getHeaderWithAuthTokenAndProjectID();
@@ -25,7 +25,7 @@ function CreatePost() {
         config,
   
     );
-      console.log(response);
+      // console.log(response);
   } catch(error){
     console.log(error);
   }

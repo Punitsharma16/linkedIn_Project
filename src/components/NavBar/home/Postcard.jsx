@@ -8,10 +8,12 @@ import likeSvg from './like.svg'
 // import CreatePost from './Comments/comment.svg';
 import commentSvg from './Comments/comment.svg'
 import { useEffect, useState } from 'react';
+
+
 export const PostCard = (props)=>{
     // console.log(likes);
     const {title,content,author:{name,profileImage},_id,likeCount,commentCount,channel} = props;
-    console.log(props);
+    // console.log(props);
     const [likes,setLikes] = useState({ likeCount: likeCount });
     const [showComments,setShowComments] = useState(false);
 
@@ -22,35 +24,35 @@ export const PostCard = (props)=>{
     //  console.log(channel.owner);
 
     // fetching users
-    console.log(_id);
-    const fetchingUSer = async ()=>{
-        const config = getHeaderWithAuthTokenAndProjectID();
-        try {
-            const user = await axios.get(
-                `https://academics.newtonschool.co/api/v1/linkedin/user/${_id}`,
-                {},
-                config,
-            );
-            console.log(user);
-            // console.log(_id);
-        } catch (error) {
-            console.log(error);
-        }
-    }
-    useEffect(()=>{
-        fetchingUSer();
-    },[])
+    // console.log(_id);
+    // const fetchingUSer = async ()=>{
+    //     const config = getHeaderWithAuthTokenAndProjectID();
+    //     try {
+    //         const user = await axios.get(
+    //             `https://academics.newtonschool.co/api/v1/linkedin/user/${_id}`,
+    //             {},
+    //             config,
+    //         );
+    //         console.log(user);
+    //         // console.log(_id);
+    //     } catch (error) {
+    //         console.log(error);
+    //     }
+    // }
+    // useEffect(()=>{
+    //     fetchingUSer();
+    // },[])
 
     const getLikeValue = (likes)=>{
         setLikes(likes);
     }
-    console.log(likes);
+    // console.log(likes);
 
 
     // end fetching users
 
     return(
-        <main className='post-container'>
+        <main className='post-container' key={_id}>
             
             <section className='post-profile'>
                 <img className='profile-image' src={profileImage} alt="profile.." />

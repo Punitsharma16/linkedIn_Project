@@ -45,13 +45,13 @@ function App(){
   return(
     <main className='main-page'>
       <helpModalContext.Provider value={{setHelpModal}}>
-      {token?<AppNavbar/>:navigate('/login')}
+      {token?(<div><AppNavbar/>{navigate('/home')}</div>):navigate('/')}
       {showHelpModal && <div className='modal-wrapper'><HelpModal/></div>}
       </helpModalContext.Provider>
      
       <Routes>
         {/* <Route path='/' element={<AppNavbar/>}/> */}
-        <Route path="/login" element={<Login/>}/>
+        <Route path="/" element={<Login/>}/>
         <Route path='/signup' element={ <Signup/>}/>
         <Route path='/home' element={
           <showModalContext.Provider value={{setShowModal}}>

@@ -28,7 +28,7 @@ export const CreateComment = ({id})=>{
                 newComment,
                 config,
             )
-            console.log(res);
+            // console.log(res);
         } catch (error) {
             console.log(error);
         }
