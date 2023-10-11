@@ -13,7 +13,8 @@ import { useEffect, useState } from "react"
 import axios from "axios"
 import { getHeaderWithAuthTokenAndProjectID } from "../../utils/config"
 import { values } from "../home/home"
-import { IdValue } from "../home/comment"
+import { IdValue } from "../home/Comments/comment"
+import { Users } from "./Users"
 
 export const MyNetwork = ()=>{
     const [connect1,setConnect1Value] = useState(false);
@@ -121,6 +122,7 @@ export const MyNetwork = ()=>{
                     </section>
                 </section>
             </section>
+            <Users/>
         </main>
         // <div>Network</div>
     )

@@ -1,0 +1,15 @@
+.commentImg{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 3rem;
+        width: 3rem;
+        border-radius: 50%;
+        background-color: #b3adad;
+    }
+    .commentImg img{
+        height: 2rem;
+        width: 2rem;
+        /* background-color: black; */
+    }
+    

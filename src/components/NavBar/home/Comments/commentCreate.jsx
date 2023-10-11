@@ -1,8 +1,11 @@
 import { useState } from "react"
-import { getHeaderWithAuthTokenAndProjectID } from "../../utils/config";
+import '../../home/home.css'
+import { getHeaderWithAuthTokenAndProjectID } from "../../../utils/config";
 import axios from "axios";
-import {token} from '../Assets/AuthToken'
-import './home.css'
+import {token} from '../../Assets/AuthToken'
+// import './home.css'
+// import { ProfileImage } from "../../Assets/profileImage";
+import { CommentsImage } from "./comments-user-profile";
 // import { useEffect } from "react";
 
 export const CreateComment = ({id})=>{
@@ -38,9 +41,15 @@ export const CreateComment = ({id})=>{
 
     
     return(
-        <main className="comment-Box">
-            <input type="text" name="content" id="comment" value={newComment.content} onChange={handleComment} />
-            <button onClick={submitComment}>post</button>
+        <main >
+            <div className="comment-Box">
+                <CommentsImage/>
+                <input type="text" name="content" id="comment" value={newComment.content} onChange={handleComment} placeholder="Add comments here.."/>
+                <div>
+                <button onClick={submitComment}>post</button>
+                 </div>
+                </div>
+            
         </main>
     )
 }

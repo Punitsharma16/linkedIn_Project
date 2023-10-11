@@ -1,7 +1,7 @@
-import './home.css'
+import '../../home/home.css'
 import commentSvg from './comment.svg'
-import {token} from '../Assets/AuthToken'
-import { getHeaderWithAuthTokenAndProjectID } from '../../utils/config';
+import {token} from '../../Assets/AuthToken'
+import { getHeaderWithAuthTokenAndProjectID } from '../../../utils/config';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import { CreateComment } from './commentCreate';
@@ -9,7 +9,6 @@ import { CreateComment } from './commentCreate';
 export const Comments = ({id})=>{
     
     const [AllComments,setAllComments] = useState([]);
-    const [showComments,setShowComments] = useState(false);
     // console.log("postID",id);
     // console.log(token);
     const fetchComments = async ()=>{
@@ -36,19 +35,18 @@ export const Comments = ({id})=>{
     return(
         <main>
             <section>
-            <button onClick={()=>setShowComments(true)} className='post-btn'><img src={commentSvg} alt="" />Comment</button>
+            {/* <button onClick={()=>setShowComments(true)} className='post-btn'><img src={commentSvg} alt="" />Comment</button> */}
             </section>
-            { showComments &&
                 <section>
                 <CreateComment id={id}/>
                 {
                     AllComments.map((comment,i)=>{
-                        return <div key={i}>{comment.content}</div>
+                        return <div className='commentBox' key={i}>{comment.content}</div>
                     })
                 }
                 
             </section>
-            }
+            
         </main>
         
 

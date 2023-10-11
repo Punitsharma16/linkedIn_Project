@@ -24,6 +24,7 @@ const dataObject = JSON.parse(userData);
 export const userInfo = ()=>{
     return dataObject;
 }
+console.log(userData);
 
 export const upVoteApi = async (postID) => {
   
