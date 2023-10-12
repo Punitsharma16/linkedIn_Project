@@ -23,6 +23,7 @@ import { HelpModal } from './components/NavBar/Profile/HelpModal/HelpModal';
 import { ViewProfile } from './components/NavBar/Profile/ViewProfile/ViewProfile';
 import { SeenProfile } from './components/NavBar/Profile/AnaliticalProfileView/AnaliticalProfileView';
 import { Activity } from './components/NavBar/Profile/MyActivities/activities';
+import { FirstPage } from './components/NavBar/FirstPage';
 
 export const showModalContext = createContext();
 export const helpModalContext = createContext();
@@ -35,7 +36,7 @@ function App(){
   const [showModal,setShowModal] = useState(false);
   const [showHelpModal, setHelpModal] = useState(false);
   useEffect(() => {
-    // disable the scrollbar
+    
     if(showModal){
       document.body.style.overflow = 'hidden'
     }else{
@@ -45,7 +46,7 @@ function App(){
   return(
     <main className='main-page'>
       <helpModalContext.Provider value={{setHelpModal}}>
-      {token?(<div><AppNavbar/>{navigate('/home')}</div>):navigate('/')}
+      {token?<AppNavbar/>:navigate('/')}
       {showHelpModal && <div className='modal-wrapper'><HelpModal/></div>}
       </helpModalContext.Provider>
      

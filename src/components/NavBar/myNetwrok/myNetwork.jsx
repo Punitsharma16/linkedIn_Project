@@ -122,7 +122,7 @@ export const MyNetwork = ()=>{
                     </section>
                 </section>
             </section>
-            <Users/>
+            {/* <Users/> */}
         </main>
         // <div>Network</div>
     )

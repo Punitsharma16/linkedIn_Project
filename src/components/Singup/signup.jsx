@@ -24,7 +24,7 @@ export const Signup = ()=>{
                 userInfo,
                 headerConfig,
             );
-            // console.log(responce);
+            console.log(responce);
             // console.log(responce.data.data.profileImage);
             if(responce.data.token){
                 sessionStorage.setItem("authToken",responce.data.token);

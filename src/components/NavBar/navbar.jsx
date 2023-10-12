@@ -18,6 +18,7 @@ import { NavLink } from "react-router-dom"
 
 export const AppNavbar = ()=>{
     return(
+        <>
         <main className="app-navbar">
             <section>
                <SearchBar/>
@@ -76,5 +77,7 @@ export const AppNavbar = ()=>{
             </section>
             
         </main>
+        
+        </>
     )
 }

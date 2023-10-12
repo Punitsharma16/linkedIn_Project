@@ -17,7 +17,7 @@ export const CreateComment = ({id})=>{
         const {name,value} = e.target;
         setNewComment({...newComment,[name]:value})
     }
-//  console.log(newComment);
+ console.log(newComment);
 //  console.log(token);
 
     const createNewComment = async(newComment)=>{
@@ -28,7 +28,7 @@ export const CreateComment = ({id})=>{
                 newComment,
                 config,
             )
-            // console.log(res);
+            console.log(res);
         } catch (error) {
             console.log(error);
         }

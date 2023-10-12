@@ -22,7 +22,7 @@ export const LikeButton = (props) => {
         {},
         { ...config }
       );
-      // console.log(upvote);
+      console.log(upvote);
       // Update the state immediately
       // setCounts({ likeCount: counts.likeCount + 1 });
       props.data({ likeCount: likeCount + 1 });

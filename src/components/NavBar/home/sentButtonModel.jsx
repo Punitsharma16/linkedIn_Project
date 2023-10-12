@@ -1,5 +1,8 @@
 import { useContext, useState } from 'react'
 import style from './SentModal.module.css'
+// import { showModalContext } from '../navbar';
+// import { showModalContext } from '../FirstPage';
+// import { showModalContext } from '../FirstPage';
 import { showModalContext } from '../../../App';
 export const SentModal = ()=>{
     const {setShowModal} = useContext(showModalContext);

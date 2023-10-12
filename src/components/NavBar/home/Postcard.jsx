@@ -46,7 +46,7 @@ export const PostCard = (props)=>{
     const getLikeValue = (likes)=>{
         setLikes(likes);
     }
-    // console.log(likes);
+    console.log(likes);
 
 
     // end fetching users

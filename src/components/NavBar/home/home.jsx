@@ -25,7 +25,7 @@ export const Home = ()=>{
                 `https://academics.newtonschool.co/api/v1/linkedin/post?limit=10&page=${page}`,
                 config,
             )
-            // console.log(posts);
+            console.log(posts);
             const newData = posts.data.data;
             setPostlist((prev)=>[...prev,...newData]);
             setIsLoading(false);
@@ -54,7 +54,7 @@ export const Home = ()=>{
 
     return () =>  window.removeEventListener("scroll", handleScrolling);
     },[]);
-    // console.log(postList);
+    console.log(postList);
     return(
         <main className="home-Page">
             <section className="all-post">

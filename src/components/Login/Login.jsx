@@ -27,7 +27,7 @@ export const Login = ()=>{
                     headerConfig,
                 )
                 setIsError(false);
-                // console.log(responce);
+                console.log(responce);
                 if(responce.data.token){
                     sessionStorage.setItem("authToken",responce.data.token);
                     console.log(responce.data.token);
