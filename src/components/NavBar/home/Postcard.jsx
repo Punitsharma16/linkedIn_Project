@@ -7,16 +7,18 @@ import { LikeButton } from './like';
 import likeSvg from './like.svg'
 // import CreatePost from './Comments/comment.svg';
 import commentSvg from './Comments/comment.svg'
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
+import { giveUser } from '../../../App';
 
 
 export const PostCard = (props)=>{
+    const {filter} = useContext(giveUser);
+    console.log(filter);
     // console.log(likes);
     const {title,content,author:{name,profileImage},_id,likeCount,commentCount,channel} = props;
     // console.log(props);
     const [likes,setLikes] = useState({ likeCount: likeCount });
     const [showComments,setShowComments] = useState(false);
-
 
     const {setPostList} = props;
 
@@ -52,6 +54,8 @@ export const PostCard = (props)=>{
     // end fetching users
 
     return(
+        <>
+        
         <main className='post-container' key={_id}>
             
             <section className='post-profile'>
@@ -87,5 +91,6 @@ export const PostCard = (props)=>{
                 }
             </section>
         </main>
+    </>
     )
 }

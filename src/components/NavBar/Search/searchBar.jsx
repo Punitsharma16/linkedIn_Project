@@ -1,38 +1,60 @@
 import { Link } from 'react-router-dom'
 import './search.css'
-import { useEffect, useState } from 'react';
+import { createContext, useContext, useEffect, useState } from 'react';
+import { getHeaderWithProjectID } from '../../utils/config';
+import axios from 'axios';
+import { takeValue } from '../../../App';
+
 export const SearchBar = ()=>{
     const [searchTerm, setSearchTerm] = useState('');
-    const [posts, setPosts] = useState([]);
-    const projectID = 'r8z30s3tojvg';
-  
-    // useEffect(() => {
-    //   // Define the API endpoint with dynamic search term
-    //   const apiUrl = `https://academics.newtonschool.co/api/v1/linkedin/post?filter={"title":"${searchTerm}"}`;
-  
-    //   // Fetch data from the API when the component mounts or searchTerm changes
-    //   fetch(apiUrl, {
-    //     headers: {
-    //       'projectID': projectID,
-    //     },
-    //   })
-    //     .then((response) => response.json())
-    //     .then((data) => setPosts(data))
-    //     .catch((error) => console.error(error));
-    // }, [searchTerm]);
-  
-    // const handleSearchInputChange = (event) => {
-    //   setSearchTerm(event.target.value);
-    // };
+    const [filteredData, setFilteredData] = useState([]);
+    const [listOfPosts,setListOfPost] = useState([]);
+    const {getData} = useContext(takeValue);
+
+    const posts = async ()=>{
+        const config = getHeaderWithProjectID();
+        try {
+            const posts = await axios.get(
+                `https://academics.newtonschool.co/api/v1/linkedin/post?limit=100`,
+                config,
+            )
+            console.log(posts);
+            const newData = posts.data.data;
+            console.log(newData);
+            setListOfPost((prev)=>[...prev,...newData]);
+        } catch (error) {
+            console.log(error);
+        }
+    };
+    useEffect(()=>{
+        posts();   
+    },[]);
+
+     const handleInputChange = (e) => {
+              const term = e.target.value;
+              setSearchTerm(term);
+
+    // Filter the data based on name and title
+    const filtered = listOfPosts.filter(item =>
+      item.author.name.toLowerCase().includes(term.toLowerCase()) ||
+      item.title.toLowerCase().includes(term.toLowerCase())
+    );
+
+    setFilteredData(filtered);
+  };
   
     return(
+        <>
+        
         <main className='searchBar'>
             <section style={{display:'flex',gap:'0.4rem'}}>
             <Link to='/home'><img src="https://play-lh.googleusercontent.com/kMofEFLjobZy_bCuaiDogzBcUT-dz3BBbOrIEjJ-hqOabjK8ieuevGe6wlTD15QzOqw=w240-h480-rw" alt="logo.." height="35px"/></Link>
-            <input type="text" name="search" id="search" placeholder='search..' />
+            <input type="text" name="search" id="search" value={searchTerm} onChange={handleInputChange} placeholder='search..' />
+            <button onClick={()=>getData(filteredData)}>search</button>
             </section>
             <section>
             </section>  
         </main>
+        </>
     )
 } 

@@ -23,14 +23,16 @@ import { HelpModal } from './components/NavBar/Profile/HelpModal/HelpModal';
 import { ViewProfile } from './components/NavBar/Profile/ViewProfile/ViewProfile';
 import { SeenProfile } from './components/NavBar/Profile/AnaliticalProfileView/AnaliticalProfileView';
 import { Activity } from './components/NavBar/Profile/MyActivities/activities';
-import { FirstPage } from './components/NavBar/FirstPage';
-
+export const takeValue = createContext(); 
+export const giveUser = createContext();
 export const showModalContext = createContext();
 export const helpModalContext = createContext();
 // export const sowPremiumModalContext = createContext();
 export const MsgModalContext = createContext();
 function App(){
   const navigate = useNavigate();
+
+  const [filter,setFilter] = useState();
   
   const [showMsgModal,setMsgModal] = useState(false);
   const [showModal,setShowModal] = useState(false);
@@ -43,8 +45,14 @@ function App(){
       document.body.style.overflow = 'unset'
     }
   }, [showModal])
+
+  const getData = (data)=>{
+    setFilter(data);
+  }
+  console.log(filter);
   return(
     <main className='main-page'>
+      <takeValue.Provider value={{getData:getData}}>
       <helpModalContext.Provider value={{setHelpModal}}>
       {token?<AppNavbar/>:navigate('/')}
       {showHelpModal && <div className='modal-wrapper'><HelpModal/></div>}
@@ -57,7 +65,9 @@ function App(){
         <Route path='/home' element={
           <showModalContext.Provider value={{setShowModal}}>
           { showModal && <div className='modal-wrapper'><SentModal/></div>}
+          <giveUser.Provider value={{filter}}>
           <Home/>
+          </giveUser.Provider>
         </showModalContext.Provider>
         }/>
         <Route path='/mynetwork' element={<MyNetwork/>}/>
@@ -79,6 +89,7 @@ function App(){
         <Route path='/analytics/profile-views' element={<SeenProfile/>}/>
         <Route path='recent-activity/all' element={<Activity/>}/>
       </Routes>
+      </takeValue.Provider>
     </main>
   )
 }
