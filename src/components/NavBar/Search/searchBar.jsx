@@ -9,48 +9,43 @@ export const SearchBar = ()=>{
     const [searchTerm, setSearchTerm] = useState('');
     const [filteredData, setFilteredData] = useState([]);
     const [listOfPosts,setListOfPost] = useState([]);
-    const {getData} = useContext(takeValue);
+    // const {getData} = useContext(takeValue);
 
-    const posts = async ()=>{
-        const config = getHeaderWithProjectID();
-        try {
-            const posts = await axios.get(
-                `https://academics.newtonschool.co/api/v1/linkedin/post?limit=100`,
-                config,
-            )
-            console.log(posts);
-            const newData = posts.data.data;
-            console.log(newData);
-            setListOfPost((prev)=>[...prev,...newData]);
-        } catch (error) {
-            console.log(error);
-        }
-    };
-    useEffect(()=>{
-        posts();   
-    },[]);
-
-     const handleInputChange = (e) => {
-              const term = e.target.value;
-              setSearchTerm(term);
+    // const posts = async ()=>{
+    //     const config = getHeaderWithProjectID();
+    //     try {
+    //         const posts = await axios.get(
+    //             `https://academics.newtonschool.co/api/v1/linkedin/post?limit=100`,
+    //             config,
+    //         )
+    //         console.log(posts);
+    //         const newData = posts.data.data;
+    //         console.log(newData);
+    //         setListOfPost((prev)=>[...prev,...newData]);
+    //     } catch (error) {
+    //         console.log(error);
+    //     }
+    // };
+    // useEffect(()=>{
+    //     posts();   
+    // },[]);
 
     // Filter the data based on name and title
-    const filtered = listOfPosts.filter(item =>
-      item.author.name.toLowerCase().includes(term.toLowerCase()) ||
-      item.title.toLowerCase().includes(term.toLowerCase())
-    );
-
-    setFilteredData(filtered);
-  };
+//     const filtered = listOfPosts.filter(item =>
+//       item.author.name.toLowerCase().includes(term.toLowerCase()) ||
+//       item.title.toLowerCase().includes(term.toLowerCase())
+//     );
+//     setFilteredData(filtered);
+//   };
   
     return(
         <>
         
         <main className='searchBar'>
             <section style={{display:'flex',gap:'0.4rem'}}>
-            <Link to='/home'><img src="https://play-lh.googleusercontent.com/kMofEFLjobZy_bCuaiDogzBcUT-dz3BBbOrIEjJ-hqOabjK8ieuevGe6wlTD15QzOqw=w240-h480-rw" alt="logo.." height="35px"/></Link>
-            <input type="text" name="search" id="search" value={searchTerm} onChange={handleInputChange} placeholder='search..' />
-            <button onClick={()=>getData(filteredData)}>search</button>
+            <Link to='/home'><img src="https://play-lh.googleusercontent.com/kMofEFLjobZy_bCuaiDogzBcUT-dz3BBbOrIEjJ-hqOabjK8ieuevGe6wlTD15QzOqw=w240-h480-rw" alt="logo.." height="30px"/></Link>
+            <input type="text" name="search" id="search" placeholder='search..' />
+            <button>search</button>
             </section>
             <section>
             </section>  

@@ -46,13 +46,13 @@ function App(){
     }
   }, [showModal])
 
-  const getData = (data)=>{
-    setFilter(data);
-  }
-  console.log(filter);
+  // const getData = (data)=>{
+  //   setFilter(data);
+  // }
+  // console.log(filter);
   return(
     <main className='main-page'>
-      <takeValue.Provider value={{getData:getData}}>
+      {/* <takeValue.Provider value={{getData:getData}}> */}
       <helpModalContext.Provider value={{setHelpModal}}>
       {token?<AppNavbar/>:navigate('/')}
       {showHelpModal && <div className='modal-wrapper'><HelpModal/></div>}
@@ -89,7 +89,7 @@ function App(){
         <Route path='/analytics/profile-views' element={<SeenProfile/>}/>
         <Route path='recent-activity/all' element={<Activity/>}/>
       </Routes>
-      </takeValue.Provider>
+      {/* </takeValue.Provider> */}
     </main>
   )
 }

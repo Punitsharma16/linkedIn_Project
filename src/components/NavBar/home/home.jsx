@@ -10,6 +10,7 @@ import { HomeProfile } from "./HomeProfile"
 import { DiscoverContainer } from "./discoverMore"
 import { AddHome } from "../Assets/add-Home"
 import CreatePost from "./PostCreate"
+import { PostCreateDummy } from "./PostDummy/PostCreateDummy"
 
 export const postListContext = createContext();
 export const Home = ()=>{
@@ -17,6 +18,7 @@ export const Home = ()=>{
     const [postList,setPostlist] = useState([]);
     const [page,setPage] = useState(1);
     const [isLoading,setIsLoading] = useState(false);
+
 
     const fetchPosts = async ()=>{
         const config = getHeaderWithProjectID();
@@ -63,6 +65,7 @@ export const Home = ()=>{
                         <DiscoverContainer/>
                 </section>
                 <section>
+                    {/* <PostCreateDummy/> */}
                 <CreatePost/>
                 { 
                 postList.map((post,i)=>(
@@ -78,7 +81,6 @@ export const Home = ()=>{
                 <LinkedinNews/>
                 <AddHome/>
                 </section>
-            
             </section>
         </main>
         

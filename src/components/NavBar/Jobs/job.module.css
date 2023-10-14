@@ -8,6 +8,7 @@
 .midSection{
     /* border: 1px solid black; */
     /* background-color: #fff; */
+    margin-top: 0.7rem;
 }
 .midSection Link {
     font-size: 20px;
@@ -17,11 +18,15 @@
     padding: 0.5rem;
     margin-bottom: 1rem;
     border-radius: 0.5rem;
+    outline: 1px solid #ddd;
+
 }
 .MidBody{
     width: 35rem;
     border-radius: 0.5rem;
     background-color: #fff;
+    outline: 1px solid #ddd;
+
 }
 .companyImg img{
     width: 4rem;

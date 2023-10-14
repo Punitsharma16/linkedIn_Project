@@ -1,0 +1,26 @@
+.container{
+    /* border: 1px solid forestgreen; */
+    margin-top: 1rem;
+    padding: 1rem;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    border-radius: 0.5rem;
+    width: 33rem;
+    outline: 1px solid #ddd;
+}
+.postCreate{
+    display: flex;
+    gap: 0.5rem;
+    
+}
+.postCreate input{
+    border-radius: 2rem;
+    width: 80%;
+    border: 1px solid #3d3d3d;
+    padding: 0.5rem;
+}
+.otherOptions{
+    display: flex;
+    justify-content: space-around;
+}

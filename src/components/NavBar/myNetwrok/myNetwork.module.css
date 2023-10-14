@@ -1,17 +1,18 @@
 
 .MyNetwork{
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
     color: #3d3d3d;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 
     /* align-items: center; */
 }
 .manageNetwork{
-    border-radius: 0.3rem;
+    border-radius: 0.5rem;
+    outline: 1px solid #ddd;
     padding: 1rem;
     background-color: #ffffff;
-    width: 80%;
+    width: 83%;
     margin: 1rem;
     font-weight: 400;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -31,6 +32,8 @@
     width: 50rem;
     margin: 1rem;
     border-radius: 0.5rem;
+    outline: 1px solid #ddd;
+
 }
 .jobCenter{
     margin: 1rem;
@@ -38,6 +41,7 @@
     padding-left: 1rem;
     border-radius: 0.5rem;
     padding-top: 0.1rem;
+    outline: 1px solid #ddd;
     padding-bottom: 1rem;
     /* height: 15rem; */
 }
@@ -70,6 +74,8 @@
     background-color: #ffffff;
     margin: 1rem;
     padding: 0.5rem;
+    outline: 1px solid #ddd;
+
 }
 .knowPeoples{
     display: flex;

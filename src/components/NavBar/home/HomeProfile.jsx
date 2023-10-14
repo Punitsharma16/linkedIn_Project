@@ -14,17 +14,17 @@ export const HomeProfile = ()=>{
             </section>
             {/* <ProfileImage/> */}
             {/* <h3>Aarav Sharma</h3> */}
-            <hr />
-            <Link to="/mynetwork">
+            <hr style={{borderTop:'#ddd'}}/>
+            <Link to="/mynetwork/connections">
             <section style={{display:'flex',justifyContent:'space-between',paddingLeft:'0.3rem',paddingRight:'0.3rem',color:'#3d3d3d'}}>
             <p>connections <br /><span>Grow your network</span></p>
             <p>4</p>
             </section>
             </Link>
             
-            <hr />
+            <hr style={{borderTop:'#3d3d3d'}}/>
             <p style={{paddingLeft:'0.3rem',paddingRight:'0.3rem'}}>Access exclusive tools & insights <br /><a href="/premium" style={{textDecoration:'underline'}}>Get hired faster. Try Premium free.</a></p>
-            <hr />
+            <hr style={{borderTop:'#ddd'}}/>
             <p style={{paddingLeft:'0.3rem',paddingBottom:'0.5rem'}}>My Items</p>
         </main>
         

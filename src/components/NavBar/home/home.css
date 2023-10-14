@@ -11,13 +11,16 @@
     align-items: center; 
      justify-content: center; 
   } */
+  .home-Page{
+    margin: 0.6rem;
+  }
 
   .all-post{
     display: flex;
     /* flex-direction: column; */
-    justify-content: space-evenly;
-    margin-left: 2.5rem;
-    margin-right: 2.5rem;
+    justify-content: center;
+    /* margin-left: 2rem;
+    margin-right: 2rem; */
     /* align-items: center; */
   }
   
@@ -27,12 +30,14 @@
       sans-serif;
    border-radius: 0.5rem;
    margin-top: 1rem;
-   width: 30rem;
+   width: 33rem;
    text-align: left;
    background-color: #fff;
    color: #3d3d3d;
    font-weight: 400;
    padding: 1rem;
+   outline: 1px solid #ddd;
+
 }
 .profile-image{
     height: 3.5rem;
@@ -65,8 +70,9 @@
     border-radius: 0.5rem;
     padding: 0.8rem;
     padding-top: 0.3rem;
-    background-color: whitesmoke;
+    background-color: #fff;
     margin: 1rem;
+    outline: 1px solid #ddd;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 .news-container p{
@@ -157,12 +163,14 @@
 .home-Profile{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 1rem;
+    /* margin-left: 2rem; */
     align-items: center;
     align-content: center;
     /* padding: 1rem; */
     font-size: 14px;
     border-radius: 0.5rem;
-    background-color: whitesmoke;
+    background-color: #fff;
+    outline: 1px solid #ddd;
     width: 14rem;
 }
 .image{
@@ -172,7 +180,7 @@
     align-items: center;
     padding: 1rem;
     border-radius: 0.5rem;
-    background: linear-gradient(to bottom,#5e5c5c67 30% ,whitesmoke 25%);
+    background: linear-gradient(to bottom,#5e5c5c67 30% ,#fff 25%);
 
 }
 /* discover box */
@@ -180,11 +188,11 @@
 .discover-box{
     color: black;
     flex-direction: column;
-    width: 13rem;
+    width: 12rem;
     margin: 1rem;
     border-radius: 0.5rem;
     padding: 1rem;
-    background-color: whitesmoke;
+    background-color: #fff;
     
 }
 .link-box{

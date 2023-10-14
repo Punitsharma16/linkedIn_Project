@@ -63,7 +63,7 @@ export const AppNavbar = ()=>{
                 </section>
                {/* <Notification/> */}
 
-               <section>
+               <section style={{paddingRight:'1rem', borderRight:'1px solid #3d3d3d'}}>
                <div className="link-logo">
             {/* <img src={profileSvg} alt="logo.." /> */}
             <Profile/>

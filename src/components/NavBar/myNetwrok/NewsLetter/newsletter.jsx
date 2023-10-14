@@ -6,9 +6,9 @@ export const NewsLetterBox = ()=>{
         <main className={style.mainContainer}>
             <section className={style.container}>
                 <p>Newsletters</p>
-                <hr />
+                <hr style={{borderTop:'#ddd'}}/>
                 <span>0 Newsletter</span>
-                <hr />
+                <hr style={{borderTop:'#ddd'}}/>
                 <div>Empty</div>
             </section>
             <div>

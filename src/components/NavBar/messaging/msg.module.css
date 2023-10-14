@@ -15,6 +15,8 @@
     background-color: #ffffff;
     border-radius: 0.5rem;
     padding: 1rem;
+    outline: 1px solid #ddd;
+
 }
 
 .msgBody{

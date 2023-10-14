@@ -14,7 +14,9 @@
     border-radius: 0.5rem;
     background-color: #fff;
     margin-left: 1rem;
+    margin-top: 0.7rem;
     font-weight: 300;
+    outline: 1px solid #ddd;
 }
 .add-image{
     display: flex;

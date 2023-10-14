@@ -9,9 +9,12 @@
     border-radius: 0.5rem;
     background-color: #fff;
     margin-right: 1rem;
+    margin-top: 0.7rem;
     padding: 1rem;
     height: 6rem;
     width: 10rem;
+    outline: 1px solid #ddd;
+
 }
 .sideLeft p{
     font-size: 18px;
@@ -24,7 +27,10 @@
     padding: 0.5rem;
     background-color: #fff;
     height: 3rem;
+    margin-top: 0.7rem;
     width: 35rem;
+    outline: 1px solid #ddd;
+
 }
 .NotificationContainer{
     background-color: #fff;
@@ -32,6 +38,8 @@
     padding: 1rem;
     margin-top: 1rem;
     border-radius: 0.5rem;
+    outline: 1px solid #ddd;
+
 }
 .NotificationContainer li{
     margin: 1rem;
