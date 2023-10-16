@@ -4,18 +4,26 @@ import { ProfileImage } from "../Assets/profileImage"
 import { userInfo } from "../../utils/config"
 import style from './profile.module.css'
 import { ProfileImageLogo } from "./ProfileImageLogo"
-import { useContext } from "react"
+import { useContext, useEffect, useState } from "react"
+// import { helpModalContext } from "../navbar"
 import { helpModalContext } from "../../../App"
 
 export const ProfileInfo = ()=>{
     const {setHelpModal} = useContext(helpModalContext);
     const navigate = useNavigate();
-    const data = userInfo();
-    const {name,email} = data;
-
+    const [userName,setName] = useState();
+    // const [emailInfo,setEmail] = useState();
+    useEffect(()=>{
+        const userData = sessionStorage.getItem('userInfo');
+       const dataObject = JSON.parse(userData);
+       const {name,email} = dataObject;
+       setName(name);
+    //    setEmail(email);
+    },[])
     const logOutBtn = ()=>{
         navigate('/');
         sessionStorage.clear();
+        localStorage.clear();
     }
     return(
         <main>
@@ -23,7 +31,7 @@ export const ProfileInfo = ()=>{
                 <div className={style.ImageNameContiner} >
                 <ProfileImageLogo/>
                 <div>
-                    <span style={{fontSize:'18px',fontWeight:'500'}}>{name}</span><br /><span style={{fontSize:'12px'}}>Full Stack Developer || React.js || Node.js</span>
+                    <span style={{fontSize:'18px',fontWeight:'500'}}>{userName}</span><br /><span style={{fontSize:'12px'}}>Full Stack Developer || React.js || Node.js</span>
                 </div>
                 </div>
                 <button onClick={()=>navigate('/profile')} className={style.viewProfileBtn}>View Profile</button>

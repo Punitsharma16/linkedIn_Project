@@ -23,28 +23,32 @@ import { HelpModal } from './components/NavBar/Profile/HelpModal/HelpModal';
 import { ViewProfile } from './components/NavBar/Profile/ViewProfile/ViewProfile';
 import { SeenProfile } from './components/NavBar/Profile/AnaliticalProfileView/AnaliticalProfileView';
 import { Activity } from './components/NavBar/Profile/MyActivities/activities';
-export const takeValue = createContext(); 
-export const giveUser = createContext();
-export const showModalContext = createContext();
+// export const takeValue = createContext(); 
+// export const giveUser = createContext();
+// export const showModalContext = createContext();
 export const helpModalContext = createContext();
 // export const sowPremiumModalContext = createContext();
-export const MsgModalContext = createContext();
-function App(){
-  const navigate = useNavigate();
+// export const MsgModalContext = createContext();
 
-  const [filter,setFilter] = useState();
+function App(){
   
-  const [showMsgModal,setMsgModal] = useState(false);
-  const [showModal,setShowModal] = useState(false);
+  const navigate = useNavigate();
   const [showHelpModal, setHelpModal] = useState(false);
-  useEffect(() => {
+
+
+  // const [filter,setFilter] = useState();
+  
+  // const [showMsgModal,setMsgModal] = useState(false);
+  // const [showModal,setShowModal] = useState(false);
+  // const [showHelpModal, setHelpModal] = useState(false);
+  // useEffect(() => {
     
-    if(showModal){
-      document.body.style.overflow = 'hidden'
-    }else{
-      document.body.style.overflow = 'unset'
-    }
-  }, [showModal])
+  //   if(showModal){
+  //     document.body.style.overflow = 'hidden'
+  //   }else{
+  //     document.body.style.overflow = 'unset'
+  //   }
+  // }, [showModal])
 
   // const getData = (data)=>{
   //   setFilter(data);
@@ -53,41 +57,44 @@ function App(){
   return(
     <main className='main-page'>
       {/* <takeValue.Provider value={{getData:getData}}> */}
+     
       <helpModalContext.Provider value={{setHelpModal}}>
-      {token?<AppNavbar/>:navigate('/')}
-      {showHelpModal && <div className='modal-wrapper'><HelpModal/></div>}
-      </helpModalContext.Provider>
+            <AppNavbar/>
+              {showHelpModal && <div className='modal-wrapper'><HelpModal/></div>}
+            </helpModalContext.Provider>
+
+      
+
      
       <Routes>
         {/* <Route path='/' element={<AppNavbar/>}/> */}
         <Route path="/" element={<Login/>}/>
         <Route path='/signup' element={ <Signup/>}/>
-        <Route path='/home' element={
+        {/* <Route path='/home' element={
           <showModalContext.Provider value={{setShowModal}}>
           { showModal && <div className='modal-wrapper'><SentModal/></div>}
           <giveUser.Provider value={{filter}}>
           <Home/>
           </giveUser.Provider>
         </showModalContext.Provider>
-        }/>
-        <Route path='/mynetwork' element={<MyNetwork/>}/>
+        }/> */}
+        {/* <Route path='/mynetwork' element={<MyNetwork/>}/>
         <Route path='/message' element={
           <MsgModalContext.Provider value={{setMsgModal}}>
             {showMsgModal && <div className='modal-wrapper'><MsgModal/></div>}
             <Message/>
           </MsgModalContext.Provider>
         
-        }/>
-        <Route path='/jobs' element={<Jobs/>}/>
+        }/> */}
+        {/* <Route path='/jobs' element={<Jobs/>}/>
         <Route path='/notification' element={<Notification/>}/>
-        {/* <Route path='/profile' element={<Profile/>}/> */}
         <Route path='/premium' element={<Premium/>}/>
         <Route path='/mynetwork/events' element={<Event/>}/>
         <Route path='/mynetwork/connections' element={<FilterByName/>}/>
         <Route path='/mynetwork/newsletter' element={<NewsLetterBox/>}/>
         <Route path='/profile' element={<ViewProfile/>}/>
         <Route path='/analytics/profile-views' element={<SeenProfile/>}/>
-        <Route path='recent-activity/all' element={<Activity/>}/>
+        <Route path='recent-activity/all' element={<Activity/>}/> */}
       </Routes>
       {/* </takeValue.Provider> */}
     </main>

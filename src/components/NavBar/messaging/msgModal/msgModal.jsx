@@ -1,6 +1,7 @@
 import { useContext } from "react"
-import { MsgModalContext } from "../../../../App"
+// import { MsgModalContext } from "../../../../App"
 import style from './msgModal.module.css'
+import { MsgModalContext } from "../../navbar";
 
 export const MsgModal = ()=>{
     const {setMsgModal} = useContext(MsgModalContext);

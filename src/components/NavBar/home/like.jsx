@@ -9,32 +9,32 @@ import { postListContext } from './home';
 // import axios from 'axios';
 // import { getHeaderWithAuthTokenAndProjectID } from 'your-header-util';
 export const LikeButton = (props) => {
-  const [isLike,setIslike] = useState(false);
-  const { id, likeCount } = props
-  // console.log(id, likeCount);
-  // console.log(token);
-  // const [counts, setCounts] = useState({ likeCount: likeCount });
-  const handleUpvote = async () => {
-    const config = getHeaderWithAuthTokenAndProjectID();
-    try {
-      const upvote = await axios.post(
-        `https://academics.newtonschool.co/api/v1/linkedin/like/${id}`,
-        {},
-        { ...config }
-      );
-      console.log(upvote);
-      // Update the state immediately
-      // setCounts({ likeCount: counts.likeCount + 1 });
-      props.data({ likeCount: likeCount + 1 });
-      setIslike(true);
-    } catch (error) {
-      console.log(error);
+  const [likes,setLikes] = useState(0);
+  const [count,setCount] = useState(0);
+
+  const likePosts = ()=>{
+    setCount(count+1);
+    if(count%2===0){
+      setLikes(likes+1);
+      sessionStorage.setItem("likes",JSON.stringify(likes+1));
+    }else{
+      setLikes(likes-1);
+      sessionStorage.setItem("likes",JSON.stringify(likes-1));
     }
-  };
+    props.data(likes);
+  }
+
+  useEffect(() => {
+    // Load posts from local storage when the component mounts
+    const likes = sessionStorage.getItem('like');
+    if (likes) {
+      setLikes(JSON.parse(likes));
+    }
+  }, [likes]);
   return (
     <section>
-      <button onClick={handleUpvote} className='post-btn'>
-        <img src={likeSvg} alt="like.." />{isLike ? 'Liked':'Like'}
+      <button onClick={likePosts} className='post-btn'>
+        <img src={likeSvg} alt="like.." />Like
       </button>
       {/* <p>Like Count: {counts.likeCount}</p> Display the updated like count */}
     </section>

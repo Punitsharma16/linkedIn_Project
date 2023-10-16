@@ -42,6 +42,8 @@ export const Signup = ()=>{
         signup({...userInfo,appType:'linkedin'});
     };
 
+    console.log(userInfo);
+
     return(
         <>
         <section className="signup-container">
@@ -66,7 +68,7 @@ export const Signup = ()=>{
             <button className="join-btn">Agree & Join</button>
             </form>
             <br/>
-            <div>Already on LinkedIn? <Link to="/login">Sign in</Link></div>
+            <div>Already on LinkedIn? <Link to="/">Sign in</Link></div>
         </main>
         <div className="get-help-div">Looking to create a page for a business? <a href="https://www.linkedin.com/help/linkedin/answer/a543852?trk=registration-frontend_join-form-page-help-link">Get help</a></div>
     </section>

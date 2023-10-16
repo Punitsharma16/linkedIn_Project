@@ -1,5 +1,6 @@
 import { useContext } from 'react'
 import style from './helpmodal.module.css'
+// import { helpModalContext } from '../../navbar';
 import { helpModalContext } from '../../../../App';
 export const HelpModal = ()=>{
     const {setHelpModal} = useContext(helpModalContext);

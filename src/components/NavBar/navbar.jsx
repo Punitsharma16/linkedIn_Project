@@ -13,10 +13,44 @@ import msgSvg from ".././NavBar/messaging/message.svg"
 import jobSvg from ".././NavBar/Jobs/jobs.svg"
 import notificationSvg from ".././NavBar/notification/notification.svg"
 import profileSvg from "../NavBar/Profile/profile.svg"
-import { NavLink } from "react-router-dom"
+import { NavLink, Route, Routes } from "react-router-dom"
+import { Premium } from "./Pages/premiumPage"
+import { Event } from "./myNetwrok/Event/Event"
+import { FilterByName } from "./myNetwrok/Connections/connectins"
+import { NewsLetterBox } from "./myNetwrok/NewsLetter/newsletter"
+import { ViewProfile } from "./Profile/ViewProfile/ViewProfile"
+import { ViewProfileImage } from "./Profile/ViewProfile/ViewprofileImage"
+import { SeenProfile } from "./Profile/AnaliticalProfileView/AnaliticalProfileView"
+import { Activity } from "./Profile/MyActivities/activities"
+import { SentModal } from "./home/sentButtonModel"
+import { Login } from "../Login/Login"
+import { Signup } from "../Singup/signup"
+import { HelpModal } from "./Profile/HelpModal/HelpModal"
+import { createContext, useEffect, useState } from "react"
+import { MsgModal } from "./messaging/msgModal/msgModal"
+
+export const MsgModalContext = createContext();
+export const giveUser = createContext();
+export const showModalContext = createContext();
+export const helpModalContext = createContext();
 
 
 export const AppNavbar = ()=>{
+
+  const [showModal,setShowModal] = useState(false);
+  const [showMsgModal,setMsgModal] = useState(false);
+//   const [showHelpModal, setHelpModal] = useState(false);
+  const [filter,setFilter] = useState();
+
+  useEffect(() => {
+    if(showModal){
+      document.body.style.overflow = 'hidden'
+    }else{
+      document.body.style.overflow = 'unset'
+    }
+  }, [showModal])
+
+
     return(
         <>
         <main className="app-navbar">
@@ -75,8 +109,42 @@ export const AppNavbar = ()=>{
                      <div><TryPrimium/></div>
                 </section>
             </section>
+            </main>
+
+           
+ <main className='main-page'>
+       <Routes>     
+             {/* <Route path="/" element={<Login/>}/>
+             <Route path='/signup' element={ <Signup/>}/> */}
+             <Route path='/home' element={
+                <showModalContext.Provider value={{setShowModal}}>
+                    { showModal && <div className='modal-wrapper'><SentModal/></div>}
+                      <giveUser.Provider value={{filter}}>
+                         <Home/>
+                      </giveUser.Provider>
+                </showModalContext.Provider>
+             }/>
+             <Route path='/mynetwork' element={<MyNetwork/>}/>
+            <Route path='/message' element={
+                 <MsgModalContext.Provider value={{setMsgModal}}>
+                     {showMsgModal && <div className='modal-wrapper'><MsgModal/></div>}
+                     <Message/>
+                 </MsgModalContext.Provider>
+        
+            }/>
+            <Route path='/jobs' element={<Jobs/>}/>
+            <Route path='/notification' element={<Notification/>}/>
+            <Route path='/premium' element={<Premium/>}/>
+            <Route path='/mynetwork/events' element={<Event/>}/>
+            <Route path='/mynetwork/connections' element={<FilterByName/>}/>
+            <Route path='/mynetwork/newsletter' element={<NewsLetterBox/>}/>
+            <Route path='/profile' element={<ViewProfile/>}/>
+            <Route path='/analytics/profile-views' element={<SeenProfile/>}/>
+            <Route path='recent-activity/all' element={<Activity/>}/>
+      </Routes>
+      </main>
             
-        </main>
+        
         
         </>
     )

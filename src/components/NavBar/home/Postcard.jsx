@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { getHeaderWithAuthTokenAndProjectID } from '../../utils/config';
+import { getHeaderWithAuthTokenAndProjectID, userInfo } from '../../utils/config';
 import { SentButton } from './SentButton';
 import { Comments } from './Comments/comment';
 import './home.css'
@@ -9,49 +9,79 @@ import likeSvg from './like.svg'
 import commentSvg from './Comments/comment.svg'
 import { useContext, useEffect, useState } from 'react';
 import { giveUser } from '../../../App';
+import { CommentsImage } from './Comments/comments-user-profile';
+import style from './postcard.module.css'
 
 
 export const PostCard = (props)=>{
-    const {filter} = useContext(giveUser);
-    console.log(filter);
+    // const {filter} = useContext(giveUser);
+    // console.log(filter);
     // console.log(likes);
     const {title,content,author:{name,profileImage},_id,likeCount,commentCount,channel} = props;
     // console.log(props);
-    const [likes,setLikes] = useState({ likeCount: likeCount });
+    // const [likes,setLikes] = useState(0);
     const [showComments,setShowComments] = useState(false);
+    // const {setPostList} = props;
 
-    const {setPostList} = props;
 
-    // console.log(title);
-    //  console.log(channel.owner);
+    const [likes,setLikes] = useState(0);
+  const [count,setCount] = useState(0);
 
-    // fetching users
-    // console.log(_id);
-    // const fetchingUSer = async ()=>{
-    //     const config = getHeaderWithAuthTokenAndProjectID();
-    //     try {
-    //         const user = await axios.get(
-    //             `https://academics.newtonschool.co/api/v1/linkedin/user/${_id}`,
-    //             {},
-    //             config,
-    //         );
-    //         console.log(user);
-    //         // console.log(_id);
-    //     } catch (error) {
-    //         console.log(error);
-    //     }
-    // }
-    // useEffect(()=>{
-    //     fetchingUSer();
-    // },[])
+  const [comments, setComments] = useState([]);
+  const [newComment, setNewComment] = useState('');
+  const [username,setName] = useState('');
 
-    const getLikeValue = (likes)=>{
-        setLikes(likes);
+  const likePosts = ()=>{
+    setCount(count+1);
+    if(count%2===0){
+      setLikes(likes+1);
+      sessionStorage.setItem("likes",JSON.stringify(likes+1));
+    }else{
+      setLikes(likes-1);
+      sessionStorage.setItem("likes",JSON.stringify(likes-1));
     }
-    console.log(likes);
+  }
 
+  useEffect(() => {
+    // Load posts from local storage when the component mounts
+    const likes = sessionStorage.getItem('likes');
+    if (likes) {
+      setLikes(JSON.parse(likes));
+    }
+  }, [likes]);
 
     // end fetching users
+
+   
+
+  useEffect(() => {
+    // Load comments from local storage when the component mounts
+    const comments = sessionStorage.getItem('comments');
+    const user = sessionStorage.getItem('userInfo');
+    if (comments) {
+      setComments(JSON.parse(comments));
+    }
+    if(user){
+        setName(JSON.parse(user));
+    }
+  }, []);
+  console.log(username.name);
+// console.log(user);
+    
+
+  const addComment = () => {
+    if (newComment) {
+      const updatedComments = [...comments, newComment];
+      setComments(updatedComments);
+      setNewComment('');
+
+      // Save comments to local storage
+      sessionStorage.setItem('comments', JSON.stringify(updatedComments));
+    }
+  };
+
+  const printComments = comments.reverse();
+
 
     return(
         <>
@@ -72,12 +102,16 @@ export const PostCard = (props)=>{
                 <img className='channel-image' src={channel.image} alt="" />
             </section>
             <section className='count-section'>
-                <p> <img src={likeSvg} alt="like" /> {likes.likeCount}</p>
+                <p> <img src={likeSvg} alt="like" /> {likes}</p>
                 <p>{commentCount} comments</p>
             </section>
             <hr />
             <section className='button-section'>
-                <LikeButton data={getLikeValue} id={_id} likeCount={likeCount}/>
+                 <section>
+                    <button onClick={likePosts} className='post-btn'>
+                        <img src={likeSvg} alt="like.." />Like
+                    </button>
+                 </section>
                 <section>
                 <button onClick={()=>setShowComments(!showComments)} className='post-btn'><img src={commentSvg} alt="" />Comment</button>
                 {/* <Comments id={_id}/> */}
@@ -87,7 +121,35 @@ export const PostCard = (props)=>{
             <section>
             { 
             showComments &&
-                <Comments id={_id}/>
+            <main>
+              <div className="comment-Box">
+                      <CommentsImage/>
+                      <input type="text" name="content" id="comment" value={newComment} onInput={(e) => setNewComment(e.target.value)} placeholder="Add comments here.."/>
+                  <div>
+                      <button onClick={addComment}>post</button>
+                  </div>
+              </div>
+
+              <section>
+                {
+                    printComments.map((comment,i)=>{
+                        return(
+                            <main className={style.commentContainer} key={i}>
+                                <section className={style.commentProfile}>
+                                    <CommentsImage/>
+                                    <div>
+                                    <span style={{fontSize:'18px',fontWeight:'500'}}>{username.name}</span><br />
+                                    <span style={{fontSize:'15px',fontWeight:'300'}}>Full Stack Developer || React.js || Node.js</span>
+                                    </div>
+                                </section>
+                                <p>{comment}</p>
+                            </main>
+                        )
+                    })
+                }
+              </section>
+              </main>
+              
                 }
             </section>
         </main>

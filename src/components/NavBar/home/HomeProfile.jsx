@@ -1,16 +1,28 @@
 import { Link } from "react-router-dom"
 import { ProfileImage } from "../Assets/profileImage"
+import { useEffect, useState } from "react";
 
 export const HomeProfile = ()=>{
-    const userData = sessionStorage.getItem('userInfo');
-    const dataObject = JSON.parse(userData);
-    const {name,email} = dataObject;
+    const [nameInfo,setNameInfo] = useState();
+    const [emailInfo,setEmail] = useState();
+    useEffect(()=>{
+        const userData = sessionStorage.getItem('userInfo');
+       const dataObject = JSON.parse(userData);
+       const {name,email} = dataObject;
+       setNameInfo(name);
+       setEmail(email);
+    },[])
+    console.log(nameInfo);
+    console.log(emailInfo);
+    // const userData = sessionStorage.getItem('userInfo');
+    // const dataObject = JSON.parse(userData);
+    // const {name,email} = dataObject;
     return(
         <main className="home-Profile">
             <section className="image">
             <ProfileImage/>
-            <h3>{name}</h3>
-            <span>{email}</span>
+            <h3>{nameInfo}</h3>
+            <span>{emailInfo}</span>
             </section>
             {/* <ProfileImage/> */}
             {/* <h3>Aarav Sharma</h3> */}

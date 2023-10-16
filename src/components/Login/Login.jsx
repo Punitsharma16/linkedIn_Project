@@ -4,10 +4,16 @@ import "./login.css"
 import { useState } from "react";
 import axios from "axios";
 import { getHeaderWithProjectIDAndBody } from "../utils/config";
+import { debounce } from 'lodash';
 export const Login = ()=>{
+    // const navigate = useNavigate();
+
+
     const [isError,setIsError] = useState(false);
     const [showError, setShowError] = useState('');
     const navigate = useNavigate();
+    const debouncedNavigate = debounce(navigate, 500);
+
     const [userInfo,setUserInfo] = useState({
         email:'',
         password:'',
@@ -32,6 +38,7 @@ export const Login = ()=>{
                     sessionStorage.setItem("authToken",responce.data.token);
                     console.log(responce.data.token);
                     sessionStorage.setItem("userInfo",JSON.stringify(responce.data.data));
+                    // navigate('/home');
                     navigate('/home');
                 }
             } catch (error) {
@@ -47,7 +54,7 @@ export const Login = ()=>{
 
     return(
         <>
-        {/* <Navbar/> */}
+        <Navbar/>
         <main className="login-page"> 
             <section>
             <p className="form-heading">Welcome to your professional community</p>
@@ -65,8 +72,10 @@ export const Login = ()=>{
                 <input className="login-btn" type="submit" value='Sign in'/>
                 <br/>
                 <br/>
-                <button className="signup-btn" onClick={()=>navigate('/signup')}>New to LinkedIn? Join now</button>
+                {/* <button className="signup-btn" onClick={()=>navigate('/signup')}>New to LinkedIn? Join now</button> */}
             </form>
+            <button className="signup-btn" onClick={()=>debouncedNavigate('/signup')}>New to LinkedIn? Join now</button>
+
             </section>
             <img src="https://olc.org/wp-content/uploads/2021/07/LinkedIn-Learning-Graphic-for-Libraries.png" alt="load-image.." height="500px" />
         </main>
