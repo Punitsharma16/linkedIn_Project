@@ -58,3 +58,20 @@
     cursor: pointer;
     background-color: #ddd;
 }
+
+@media screen and (max-width:768px){
+    .container{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .sideLeft{
+        display: none;
+    }
+    .heading{
+        width: 28rem;
+    }
+    .NotificationContainer{
+        width: 27rem;
+    }
+}

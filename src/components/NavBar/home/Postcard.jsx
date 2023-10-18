@@ -103,7 +103,7 @@ export const PostCard = (props)=>{
             </section>
             <section className='count-section'>
                 <p> <img src={likeSvg} alt="like" /> {likes}</p>
-                <p>{commentCount} comments</p>
+                <p>0 comments</p>
             </section>
             <hr />
             <section className='button-section'>

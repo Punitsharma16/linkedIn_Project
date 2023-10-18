@@ -120,3 +120,20 @@
     cursor: pointer;
     background-color: #e9e4e4;
 }
+
+@media screen and (max-width:768px){
+    .MyNetwork{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .manageNetwork{
+        width: 26rem;
+    }
+    .knowPeoples{
+        flex-wrap: wrap;
+    }
+    .invitions{
+        width: 27rem;
+    }
+}

@@ -17,6 +17,7 @@
 }
 .signup-container p{
     font-size: 2rem;
+    padding-left: 1rem;
 }
 .signup-form{
     display: flex;
@@ -72,12 +73,14 @@ a{
 }
 .footer{
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: space-evenly;
 }
 .footer a{
     font-size: 14px;
     color: rgb(144, 144, 224);
+    margin-bottom: 1rem;
 }
 .footer a:hover{
     color: rgb(69, 69, 236);

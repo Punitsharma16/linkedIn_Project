@@ -47,7 +47,7 @@ export const Signup = ()=>{
     return(
         <>
         <section className="signup-container">
-            <div className="signup-logo">
+            <div className="signup-logo hide">
                 <p>Linked </p>
                 <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" alt="linkedin-logo" height="35px"/>
             </div>

@@ -59,3 +59,14 @@
     cursor: pointer;
     background-color: #ffffff;
 }
+
+@media screen and (max-width:768px){
+    .container{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .connetionsContainer{
+        width: 28rem;
+    }
+}

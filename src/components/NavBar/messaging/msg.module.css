@@ -49,3 +49,14 @@
     cursor: pointer;
     background-color: #e6e4e4;
 }
+
+@media screen and (max-width:768px){
+    .msgContainer{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .msgBox{
+        width: 27rem;
+    }
+}

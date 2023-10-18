@@ -13,7 +13,7 @@ import msgSvg from ".././NavBar/messaging/message.svg"
 import jobSvg from ".././NavBar/Jobs/jobs.svg"
 import notificationSvg from ".././NavBar/notification/notification.svg"
 import profileSvg from "../NavBar/Profile/profile.svg"
-import { NavLink, Route, Routes } from "react-router-dom"
+import { NavLink, Outlet, Route, Routes } from "react-router-dom"
 import { Premium } from "./Pages/premiumPage"
 import { Event } from "./myNetwrok/Event/Event"
 import { FilterByName } from "./myNetwrok/Connections/connectins"
@@ -29,26 +29,26 @@ import { HelpModal } from "./Profile/HelpModal/HelpModal"
 import { createContext, useEffect, useState } from "react"
 import { MsgModal } from "./messaging/msgModal/msgModal"
 
-export const MsgModalContext = createContext();
-export const giveUser = createContext();
-export const showModalContext = createContext();
-export const helpModalContext = createContext();
+// export const MsgModalContext = createContext();
+// export const giveUser = createContext();
+// export const showModalContext = createContext();
+// export const helpModalContext = createContext();
 
 
 export const AppNavbar = ()=>{
 
-  const [showModal,setShowModal] = useState(false);
-  const [showMsgModal,setMsgModal] = useState(false);
+  // const [showModal,setShowModal] = useState(false);
+  // const [showMsgModal,setMsgModal] = useState(false);
 //   const [showHelpModal, setHelpModal] = useState(false);
-  const [filter,setFilter] = useState();
+  // const [filter,setFilter] = useState();
 
-  useEffect(() => {
-    if(showModal){
-      document.body.style.overflow = 'hidden'
-    }else{
-      document.body.style.overflow = 'unset'
-    }
-  }, [showModal])
+  // useEffect(() => {
+  //   if(showModal){
+  //     document.body.style.overflow = 'hidden'
+  //   }else{
+  //     document.body.style.overflow = 'unset'
+  //   }
+  // }, [showModal])
 
 
     return(
@@ -60,52 +60,51 @@ export const AppNavbar = ()=>{
 
             <section className="navbar-links">
                 <section>
-                      <div className="link-logo">
-                      <img src={homeSvg} alt="logo.." />
-                      <NavLink to="/home">Home</NavLink>
+                      <div>
+                      {/* <img src={homeSvg} alt="logo.."/> */}
+                      <NavLink className="link-logo" to="/home"><img src={homeSvg} alt="logo.."/><span className='hide'>Home</span></NavLink>
                       </div>
                 </section>
             {/* <Home/> */}
             <section>
-            <div className="link-logo">
-            <img src={networkSvg} alt="svg.."/>
-            <NavLink to="/mynetwork">My Network</NavLink>
+            <div >
+            {/* <img src={networkSvg} alt="svg.."/> */}
+            <NavLink className="link-logo" to="/mynetwork"><img src={networkSvg} alt="svg.."/> <span className='hide'>Network</span></NavLink>
             </div>
             </section>
                {/* <MyNetwork/> */}
 
                <section>
-               <div className="link-logo">
-            <img src={jobSvg} alt="logo.." />
-            <NavLink to="/Jobs">Jobs</NavLink>
+               <div >
+            {/* <img src={jobSvg} alt="logo.." /> */}
+            <NavLink className="link-logo" to="/Jobs"><img src={jobSvg} alt="logo.." /><span className='hide'>Jobs</span></NavLink>
              </div>
                </section>
                {/* <Jobs/> */}
                <section>
                <div className="link-logo">
-            <img src={msgSvg} alt="logo.." />
-             <NavLink to="/message">Messaging</NavLink>
+            {/* <img src={msgSvg} alt="logo.." /> */}
+             <NavLink className="link-logo" to="/message"><img src={msgSvg} alt="logo.." /><span className='hide'>Messeging</span></NavLink>
         </div>
                </section>
                 {/* <Message/> */}
 
                 <section>
-                <div className="link-logo">
-            <img src={notificationSvg} alt="logo.." />
-            <NavLink to="/notification">Notification</NavLink>
+                <div >
+            {/* <img src={notificationSvg} alt="logo.." /> */}
+            <NavLink className="link-logo" to="/notification"><img src={notificationSvg} alt="logo.." /><span className='hide'>Notification</span></NavLink>
         </div>
                 </section>
                {/* <Notification/> */}
 
                <section style={{paddingRight:'1rem', borderRight:'1px solid #3d3d3d'}}>
                <div className="link-logo">
-            {/* <img src={profileSvg} alt="logo.." /> */}
             <Profile/>
         </div>
                </section>
                 {/* <Profile/> */}
                 <section>
-                     <div>Get hired faster</div>
+                     <div className="hide">Get hired faster</div>
                      <div><TryPrimium/></div>
                 </section>
             </section>
@@ -116,7 +115,7 @@ export const AppNavbar = ()=>{
        <Routes>     
              {/* <Route path="/" element={<Login/>}/>
              <Route path='/signup' element={ <Signup/>}/> */}
-             <Route path='/home' element={
+             {/* <Route path='/home' element={
                 <showModalContext.Provider value={{setShowModal}}>
                     { showModal && <div className='modal-wrapper'><SentModal/></div>}
                       <giveUser.Provider value={{filter}}>
@@ -124,15 +123,17 @@ export const AppNavbar = ()=>{
                       </giveUser.Provider>
                 </showModalContext.Provider>
              }/>
-             <Route path='/mynetwork' element={<MyNetwork/>}/>
-            <Route path='/message' element={
+             <Outlet/> */}
+             
+             {/* <Route path='/mynetwork' element={<MyNetwork/>}/> */}
+            {/* <Route path='/message' element={
                  <MsgModalContext.Provider value={{setMsgModal}}>
                      {showMsgModal && <div className='modal-wrapper'><MsgModal/></div>}
                      <Message/>
                  </MsgModalContext.Provider>
         
-            }/>
-            <Route path='/jobs' element={<Jobs/>}/>
+            }/> */}
+            {/* <Route path='/jobs' element={<Jobs/>}/>
             <Route path='/notification' element={<Notification/>}/>
             <Route path='/premium' element={<Premium/>}/>
             <Route path='/mynetwork/events' element={<Event/>}/>
@@ -140,7 +141,7 @@ export const AppNavbar = ()=>{
             <Route path='/mynetwork/newsletter' element={<NewsLetterBox/>}/>
             <Route path='/profile' element={<ViewProfile/>}/>
             <Route path='/analytics/profile-views' element={<SeenProfile/>}/>
-            <Route path='recent-activity/all' element={<Activity/>}/>
+            <Route path='recent-activity/all' element={<Activity/>}/> */}
       </Routes>
       </main>
             

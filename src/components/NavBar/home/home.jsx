@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom"
+import { NavLink, Outlet } from "react-router-dom"
 import homeSvg from "./home.svg"
 import {token} from '../Assets/AuthToken'
 import { createContext, useContext, useEffect, useState } from "react"
@@ -11,6 +11,7 @@ import { DiscoverContainer } from "./discoverMore"
 import { AddHome } from "../Assets/add-Home"
 import CreatePost from "./PostCreate"
 import { PostCreateDummy } from "./PostDummy/PostCreateDummy"
+import { AppNavbar } from "../navbar"
 
 export const postListContext = createContext();
 export const Home = ()=>{
@@ -58,6 +59,9 @@ export const Home = ()=>{
     },[]);
     console.log(postList);
     return(
+        <>
+        {/* <AppNavbar/> */}
+        {/* <Outlet/> */}
         <main className="home-Page">
             <section className="all-post">
                 <section>
@@ -72,8 +76,6 @@ export const Home = ()=>{
                     <postListContext.Provider value={setPostlist}>
                         <PostCard key={i} {...post}/>
                     </postListContext.Provider>
-                        
-                
                 ))
                  }
                 </section>
@@ -83,7 +85,7 @@ export const Home = ()=>{
                 </section>
             </section>
         </main>
-        
+    </>
         
     )
 }

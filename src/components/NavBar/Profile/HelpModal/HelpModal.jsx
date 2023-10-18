@@ -21,7 +21,6 @@ export const HelpModal = ()=>{
    You can also forward a message to share a conversation with another connection. Once you send a message, it will be sent to the recipient's messaging list and possibly to their email address.
 In addition, you can continue a dialogue with your connections by searching for sent and received messages using filters or keywords in order to reply to a message.
 LinkedIn messaging gives you the option to leave a conversation or you can mute a conversation to stop receiving notifications for new messages on the thread. If you’ve started a conversation, you can also terminate the thread by deleting the conversation.
-If a message you've received is inappropriate or offensive, you can report the message as spam.
             </section>
             <button onClick={()=>setHelpModal(false)} className={style.btn}>Close</button>
         </main>

@@ -192,7 +192,7 @@
     margin: 1rem;
     border-radius: 0.5rem;
     padding: 1rem;
-    background-color: #fff;
+    background-color: #ffffff;
     
 }
 .link-box{
@@ -207,4 +207,28 @@
     font-size: 14px;
     font-weight: 600;
     color: rgba(73, 70, 70, 0.747);
+}
+
+@media screen and (max-width:768px){
+    .all-post{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .post-container{
+        width: 27rem;
+        }
+    .hide{
+        display: none;
+    }
+    .home-Profile{
+        width: 29rem;
+    }
+    .discover-box{
+        display: none;
+    }
+    .image{
+        padding: 0.5rem;
+    }
+    
 }

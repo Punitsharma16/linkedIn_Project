@@ -74,7 +74,7 @@ export const FilterByName = ()=>{
         </section>
         </main>
         <div style={{margin:'1rem'}}>
-        <Link to='/jobs'><img src="https://media.licdn.com/media/AAYQAgTPAAgAAQAAAAAAADVuOvKzTF-3RD6j-qFPqhubBQ.png" alt="imageLoad.." /></Link>
+        <Link className='hide' to='/jobs'><img src="https://media.licdn.com/media/AAYQAgTPAAgAAQAAAAAAADVuOvKzTF-3RD6j-qFPqhubBQ.png" alt="imageLoad.." /></Link>
         </div>
     </section>
     );

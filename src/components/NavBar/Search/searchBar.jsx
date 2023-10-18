@@ -45,7 +45,7 @@ export const SearchBar = ()=>{
             <section style={{display:'flex',gap:'0.4rem'}}>
             <Link to='/home'><img src="https://play-lh.googleusercontent.com/kMofEFLjobZy_bCuaiDogzBcUT-dz3BBbOrIEjJ-hqOabjK8ieuevGe6wlTD15QzOqw=w240-h480-rw" alt="logo.." height="30px"/></Link>
             <input type="text" name="search" id="search" placeholder='search..' />
-            <button>search</button>
+            {/* <button>search</button> */}
             </section>
             <section>
             </section>  

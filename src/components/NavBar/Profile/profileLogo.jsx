@@ -7,7 +7,7 @@ export const ProfileLogo = ()=>{
             <section className={style.profileImg}>
             <img src={HomeSvg} alt="profile.svg" />
             </section>
-            <span>Me <img src={down} alt="-" /></span>
+            <span className='hide'>Me <img src={down} alt="-" /></span>
         </main>
         
         

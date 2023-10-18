@@ -21,9 +21,12 @@ export const ProfileInfo = ()=>{
     //    setEmail(email);
     },[])
     const logOutBtn = ()=>{
-        navigate('/');
+        // navigate('/');
         sessionStorage.clear();
         localStorage.clear();
+        navigate('/');
+        window.location.reload();
+
     }
     return(
         <main>

@@ -66,7 +66,10 @@ export const MyNetwork = ()=>{
                         <p>4</p>
                     </div>
                 </aside>
+                <div className="hide">
                 <AddHome/>
+                </div>
+               
             </section>
             <section>
                 <div className={style.invitions}>

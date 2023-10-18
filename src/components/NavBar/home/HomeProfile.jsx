@@ -20,7 +20,7 @@ export const HomeProfile = ()=>{
     return(
         <main className="home-Profile">
             <section className="image">
-            <ProfileImage/>
+            <Link to='/profile'><ProfileImage/></Link>
             <h3>{nameInfo}</h3>
             <span>{emailInfo}</span>
             </section>
@@ -33,11 +33,13 @@ export const HomeProfile = ()=>{
             <p>4</p>
             </section>
             </Link>
-            
+            <section className="hide">
             <hr style={{borderTop:'#3d3d3d'}}/>
             <p style={{paddingLeft:'0.3rem',paddingRight:'0.3rem'}}>Access exclusive tools & insights <br /><a href="/premium" style={{textDecoration:'underline'}}>Get hired faster. Try Premium free.</a></p>
             <hr style={{borderTop:'#ddd'}}/>
             <p style={{paddingLeft:'0.3rem',paddingBottom:'0.5rem'}}>My Items</p>
+            </section>
+            
         </main>
         
     )

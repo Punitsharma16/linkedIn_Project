@@ -23,17 +23,30 @@ import { HelpModal } from './components/NavBar/Profile/HelpModal/HelpModal';
 import { ViewProfile } from './components/NavBar/Profile/ViewProfile/ViewProfile';
 import { SeenProfile } from './components/NavBar/Profile/AnaliticalProfileView/AnaliticalProfileView';
 import { Activity } from './components/NavBar/Profile/MyActivities/activities';
-// export const takeValue = createContext(); 
-// export const giveUser = createContext();
-// export const showModalContext = createContext();
+import { NavBarWithOutlet } from './components/NavBar/home/NavBarOutlet';
+
+
+export const MsgModalContext = createContext();
+export const giveUser = createContext();
+export const showModalContext = createContext();
 export const helpModalContext = createContext();
+// export const helpModalContext = createContext();
 // export const sowPremiumModalContext = createContext();
 // export const MsgModalContext = createContext();
 
 function App(){
+
+  // const userToken = sessionStorage.getItem('userInfo');
+  //   const dataToken = JSON.parse(userToken);
+  //   const {token} = dataToken;
+  //   console.log(token);
   
   const navigate = useNavigate();
   const [showHelpModal, setHelpModal] = useState(false);
+  const [showModal,setShowModal] = useState(false);
+  const [showMsgModal,setMsgModal] = useState(false);
+  const [filter,setFilter] = useState();
+
 
 
   // const [filter,setFilter] = useState();
@@ -41,52 +54,55 @@ function App(){
   // const [showMsgModal,setMsgModal] = useState(false);
   // const [showModal,setShowModal] = useState(false);
   // const [showHelpModal, setHelpModal] = useState(false);
-  // useEffect(() => {
-    
-  //   if(showModal){
-  //     document.body.style.overflow = 'hidden'
-  //   }else{
-  //     document.body.style.overflow = 'unset'
-  //   }
-  // }, [showModal])
+  useEffect(() => {
+    if(showModal){
+      document.body.style.overflow = 'hidden'
+    }else{
+      document.body.style.overflow = 'unset'
+    }
+  }, [showModal])
 
-  // const getData = (data)=>{
-  //   setFilter(data);
-  // }
-  // console.log(filter);
+  
   return(
     <main className='main-page'>
       {/* <takeValue.Provider value={{getData:getData}}> */}
      
-      <helpModalContext.Provider value={{setHelpModal}}>
-            <AppNavbar/>
+      {/* <helpModalContext.Provider value={{setHelpModal}}>
+         <NavBarWithOutlet/>
               {showHelpModal && <div className='modal-wrapper'><HelpModal/></div>}
-            </helpModalContext.Provider>
+            </helpModalContext.Provider> */}
 
       
 
      
       <Routes>
         {/* <Route path='/' element={<AppNavbar/>}/> */}
-        <Route path="/" element={<Login/>}/>
+        {/* <Route path="/login" element={<Login/>}/> */}
         <Route path='/signup' element={ <Signup/>}/>
-        {/* <Route path='/home' element={
+
+        <Route path='/' element={
+          <helpModalContext.Provider value={{setHelpModal}}>
+          {token?<NavBarWithOutlet/>:<Login/>}
+               {showHelpModal && <div className='modal-wrapper'><HelpModal/></div>}
+             </helpModalContext.Provider>
+        }>
+        <Route path='/home' element={
           <showModalContext.Provider value={{setShowModal}}>
           { showModal && <div className='modal-wrapper'><SentModal/></div>}
           <giveUser.Provider value={{filter}}>
           <Home/>
           </giveUser.Provider>
         </showModalContext.Provider>
-        }/> */}
-        {/* <Route path='/mynetwork' element={<MyNetwork/>}/>
+        }/>
+        <Route path='/mynetwork' element={<MyNetwork/>}/>
         <Route path='/message' element={
           <MsgModalContext.Provider value={{setMsgModal}}>
             {showMsgModal && <div className='modal-wrapper'><MsgModal/></div>}
             <Message/>
           </MsgModalContext.Provider>
         
-        }/> */}
-        {/* <Route path='/jobs' element={<Jobs/>}/>
+        }/>
+        <Route path='/jobs' element={<Jobs/>}/>
         <Route path='/notification' element={<Notification/>}/>
         <Route path='/premium' element={<Premium/>}/>
         <Route path='/mynetwork/events' element={<Event/>}/>
@@ -94,7 +110,8 @@ function App(){
         <Route path='/mynetwork/newsletter' element={<NewsLetterBox/>}/>
         <Route path='/profile' element={<ViewProfile/>}/>
         <Route path='/analytics/profile-views' element={<SeenProfile/>}/>
-        <Route path='recent-activity/all' element={<Activity/>}/> */}
+        <Route path='recent-activity/all' element={<Activity/>}/>
+        </Route>
       </Routes>
       {/* </takeValue.Provider> */}
     </main>

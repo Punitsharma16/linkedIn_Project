@@ -101,3 +101,31 @@
     z-index: 1;
     /* position: fixed; */
 }
+
+@media screen and (max-width:768px){
+    .mainContainer{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .profileInfoContainer{
+        width: 29rem;
+    }
+    .img{
+        display: none;
+    }
+    .infoWithImg{
+        padding-top: 1.5rem;
+        height: 15rem;
+        background: linear-gradient(to bottom,#5e5c5c67 6.5rem ,#fff 25%);
+    }
+    .profileImgView{
+        height: 6rem;
+        width: 6rem;
+    }
+    .profileImgView img{
+        width: 4rem;
+        height: 4rem;
+    }
+    
+}

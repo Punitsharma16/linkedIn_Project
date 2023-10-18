@@ -12,3 +12,9 @@
 .modal button {
     padding: 0.5rem;
 }
+
+@media screen and (max-width:768px){
+    .modal{
+        width: 29rem;
+    }
+}

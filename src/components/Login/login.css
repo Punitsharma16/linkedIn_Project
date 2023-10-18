@@ -3,7 +3,7 @@ display: flex;
 justify-content: space-around;
 align-items: center;
 height: 2rem;
-margin-top: 2rem;
+margin-top: 1rem;
 }
 .login-navbar button:hover{
     cursor: pointer;
@@ -70,4 +70,10 @@ margin-top: 2rem;
 .signup-btn:hover{
     cursor: pointer;
     background-color: rgb(208, 231, 252);
+}
+
+@media screen and (max-width:768px){
+    .form-heading{
+        font-size: 2rem;
+    }
 }

@@ -3,8 +3,8 @@ import msgSvg from "./message.svg"
 import style from './msg.module.css'
 import { AddHome } from "../Assets/add-Home"
 import { useContext } from "react"
-import { MsgModalContext } from "../navbar"
-// import { MsgModalContext } from "../../../App"
+// import { MsgModalContext } from "../navbar"
+import { MsgModalContext } from "../../../App"
 export const Message = ()=>{
     const {setMsgModal} = useContext(MsgModalContext);
     return(

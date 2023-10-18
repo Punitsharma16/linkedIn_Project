@@ -40,6 +40,8 @@ export const Login = ()=>{
                     sessionStorage.setItem("userInfo",JSON.stringify(responce.data.data));
                     // navigate('/home');
                     navigate('/home');
+                    window.location.reload();
+
                 }
             } catch (error) {
                 setIsError(true);
@@ -77,7 +79,10 @@ export const Login = ()=>{
             <button className="signup-btn" onClick={()=>debouncedNavigate('/signup')}>New to LinkedIn? Join now</button>
 
             </section>
+            <div className="hide">
             <img src="https://olc.org/wp-content/uploads/2021/07/LinkedIn-Learning-Graphic-for-Libraries.png" alt="load-image.." height="500px" />
+            </div>
+            {/* <img src="https://olc.org/wp-content/uploads/2021/07/LinkedIn-Learning-Graphic-for-Libraries.png" alt="load-image.." height="500px" /> */}
         </main>
         </>
     )

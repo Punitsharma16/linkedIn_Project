@@ -14,6 +14,8 @@
     width: 13rem;
     align-items: center;
     border-radius: 0.5rem;
+    outline: 1px solid #ddd;
+
 }
 .follow{
     display: flex;
@@ -28,6 +30,7 @@
     width: 35rem;
     border-radius: 0.5rem;
     padding: 1rem;
+    outline: 1px solid #ddd;
 }
 .midBodyBody{
     display: flex;
@@ -54,4 +57,24 @@
 .midBody button:hover{
     cursor: pointer;
     background-color: rgb(77, 185, 77);
+}
+
+@media screen and (max-width:768px){
+    .container{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .midBody{
+        width: 26rem;
+    }
+    .activityUser{
+        width: 28rem;
+        height: 13rem;
+    }
+    .follow{
+        width: 28rem;
+        justify-content: space-evenly;
+        height: 3rem;
+    }
 }
