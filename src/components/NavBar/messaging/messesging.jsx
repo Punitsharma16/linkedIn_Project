@@ -1,5 +1,5 @@
-import { NavLink } from "react-router-dom"
-import msgSvg from "./message.svg"
+// import { NavLink } from "react-router-dom"
+// import msgSvg from "./message.svg"
 import style from './msg.module.css'
 import { AddHome } from "../Assets/add-Home"
 import { useContext } from "react"

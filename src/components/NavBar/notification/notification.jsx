@@ -1,5 +1,5 @@
-import { Link, NavLink, useNavigate } from "react-router-dom"
-import notificationSvg from "./notification.svg"
+import { Link, useNavigate } from "react-router-dom"
+// import notificationSvg from "./notification.svg"
 import { AddHome } from "../Assets/add-Home"
 import style from './navbar.module.css'
 

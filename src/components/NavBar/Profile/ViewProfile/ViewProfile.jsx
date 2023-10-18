@@ -1,4 +1,4 @@
-import { Link, useNavigate, useParams } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { userInfo } from "../../../utils/config"
 import { AddHome } from "../../Assets/add-Home"
 import style from './viewProfile.module.css'

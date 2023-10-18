@@ -1,8 +1,8 @@
- import { useContext, useState } from 'react'
+ import { useContext} from 'react'
 import './home.css'
-import style from './SentModal.module.css';
+// import style from './SentModal.module.css';
  import sentSvg from './sent.svg'
-import { SentModal } from './sentButtonModel';
+// import { SentModal } from './sentButtonModel';
 // import { showModalContext } from '../navbar';
 // import { showModalContext } from '../navbar';
 // import { showModalContext } from '../FirstPage';

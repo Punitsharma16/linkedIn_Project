@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import { ReactComponent as ProfileIcon } from "./profile.svg";
+// import { ReactComponent as ProfileIcon } from "./profile.svg";
 // import { useNavigate } from "react-router-dom";
 import style from './profile.module.css'
 // import { ProfileImage } from "../Assets/profileImage";

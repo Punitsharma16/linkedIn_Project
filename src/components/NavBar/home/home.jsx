@@ -1,6 +1,6 @@
-import { NavLink, Outlet } from "react-router-dom"
-import homeSvg from "./home.svg"
-import {token} from '../Assets/AuthToken'
+// import { NavLink, Outlet } from "react-router-dom"
+// import homeSvg from "./home.svg"
+// import {token} from '../Assets/AuthToken'
 import { createContext, useContext, useEffect, useState } from "react"
 import { getHeaderWithProjectID } from "../../utils/config"
 import axios from "axios"
@@ -10,8 +10,8 @@ import { HomeProfile } from "./HomeProfile"
 import { DiscoverContainer } from "./discoverMore"
 import { AddHome } from "../Assets/add-Home"
 import CreatePost from "./PostCreate"
-import { PostCreateDummy } from "./PostDummy/PostCreateDummy"
-import { AppNavbar } from "../navbar"
+// import { PostCreateDummy } from "./PostDummy/PostCreateDummy"
+// import { AppNavbar } from "../navbar"
 
 export const postListContext = createContext();
 export const Home = ()=>{

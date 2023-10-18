@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react"
 import '../../home/home.css'
-import { getHeaderWithAuthTokenAndProjectID } from "../../../utils/config";
-import axios from "axios";
-import {token} from '../../Assets/AuthToken'
+// import { getHeaderWithAuthTokenAndProjectID } from "../../../utils/config";
+// import axios from "axios";
+// import {token} from '../../Assets/AuthToken'
 import { CommentsImage } from "./comments-user-profile";
 
 export const CreateComment = ()=>{

@@ -1,4 +1,4 @@
-import { Link, NavLink } from "react-router-dom"
+import { Link} from "react-router-dom"
 // import networkSvg from "./mynetwork.svg"
 import { AddHome } from "../Assets/add-Home"
 import style from './myNetwork.module.css'
@@ -9,11 +9,11 @@ import events from './Svgs/events.svg'
 import news from './Svgs/NewsLetter.svg'
 import page from './Svgs/pages.svg'
 import connectBtn from './Svgs/connectBtn.svg'
-import { useEffect, useState } from "react"
-import axios from "axios"
-import { getHeaderWithAuthTokenAndProjectID } from "../../utils/config"
-import { values } from "../home/home"
-import { IdValue } from "../home/Comments/comment"
+import {useState } from "react"
+// import axios from "axios"
+// import { getHeaderWithAuthTokenAndProjectID } from "../../utils/config"
+// import { values } from "../home/home"
+// import { IdValue } from "../home/Comments/comment"
 // import { Users } from "./Users"
 
 export const MyNetwork = ()=>{

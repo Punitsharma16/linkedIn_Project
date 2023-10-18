@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import style from './connection.module.css'
 import { Link, useNavigate } from 'react-router-dom';
-import { getHeaderWithAuthTokenAndProjectID } from '../../../utils/config';
+// import { getHeaderWithAuthTokenAndProjectID } from '../../../utils/config';
 import axios from 'axios';
 
 const ConnectData = [

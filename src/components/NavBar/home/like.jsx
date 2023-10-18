@@ -1,10 +1,10 @@
 import './home.css'
 import likeSvg from './like.svg'
-import {token} from '../Assets/AuthToken'
-import { useContext, useEffect, useState } from 'react';
-import { getHeaderWithAuthTokenAndProjectID, upVoteApi } from '../../utils/config';
-import axios from 'axios';
-import { postListContext } from './home';
+// import {token} from '../Assets/AuthToken'
+import {useEffect, useState } from 'react';
+// import { getHeaderWithAuthTokenAndProjectID, upVoteApi } from '../../utils/config';
+// import axios from 'axios';
+// import { postListContext } from './home';
 // import React, { useState } from 'react';
 // import axios from 'axios';
 // import { getHeaderWithAuthTokenAndProjectID } from 'your-header-util';

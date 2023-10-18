@@ -1,7 +1,7 @@
 import { Link, useNavigate } from "react-router-dom"
-import { HomeProfile } from "../home/HomeProfile"
-import { ProfileImage } from "../Assets/profileImage"
-import { userInfo } from "../../utils/config"
+// import { HomeProfile } from "../home/HomeProfile"
+// import { ProfileImage } from "../Assets/profileImage"
+// import { userInfo } from "../../utils/config"
 import style from './profile.module.css'
 import { ProfileImageLogo } from "./ProfileImageLogo"
 import { useContext, useEffect, useState } from "react"

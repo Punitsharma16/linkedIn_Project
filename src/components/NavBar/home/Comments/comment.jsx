@@ -1,10 +1,10 @@
 import '../../home/home.css'
-import commentSvg from './comment.svg'
-import {token} from '../../Assets/AuthToken'
-import { getHeaderWithAuthTokenAndProjectID } from '../../../utils/config';
-import axios from 'axios';
+// import commentSvg from './comment.svg'
+// import {token} from '../../Assets/AuthToken'
+// import { getHeaderWithAuthTokenAndProjectID } from '../../../utils/config';
+// import axios from 'axios';
 import { useEffect, useState } from 'react';
-import { CreateComment } from './commentCreate';
+// import { CreateComment } from './commentCreate';
 import { CommentsImage } from './comments-user-profile';
 // import { PostComments } from './comenstsOfPost';
 export const Comments = ()=>{

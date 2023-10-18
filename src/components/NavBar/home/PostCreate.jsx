@@ -1,15 +1,15 @@
-import React, { createContext, useContext, useEffect, useRef, useState } from 'react';
-import {token} from '../Assets/AuthToken'
-import axios from 'axios';
-import { getHeaderWithAuthTokenAndProjectID, userInfo } from '../../utils/config';
+import React, { createContext, useEffect, useState } from 'react';
+// import {token} from '../Assets/AuthToken'
+// import axios from 'axios';
+// import { getHeaderWithAuthTokenAndProjectID, userInfo } from '../../utils/config';
 import { ProfileImage } from '../Assets/profileImage';
 import commentSvg from './Comments/comment.svg'
 import likeSvg from './like.svg'
-import { Comments } from './Comments/comment';
-import { LikeButton } from './like';
+// import { Comments } from './Comments/comment';
+// import { LikeButton } from './like';
 import { SentButton } from './SentButton';
-import { ProfileImageLogo } from '../Profile/ProfileImageLogo';
-import { ViewProfileImage } from '../Profile/ViewProfile/ViewprofileImage';
+// import { ProfileImageLogo } from '../Profile/ProfileImageLogo';
+// import { ViewProfileImage } from '../Profile/ViewProfile/ViewprofileImage';
 import { CommentsImage } from './Comments/comments-user-profile';
 import { PostCreateDummy } from './PostDummy/PostCreateDummy';
 import style from './PostCreate.module.css'

@@ -1,14 +1,14 @@
 import axios from 'axios';
-import { getHeaderWithAuthTokenAndProjectID, userInfo } from '../../utils/config';
+// import { getHeaderWithAuthTokenAndProjectID, userInfo } from '../../utils/config';
 import { SentButton } from './SentButton';
-import { Comments } from './Comments/comment';
+// import { Comments } from './Comments/comment';
 import './home.css'
-import { LikeButton } from './like';
+// import { LikeButton } from './like';
 import likeSvg from './like.svg'
 // import CreatePost from './Comments/comment.svg';
 import commentSvg from './Comments/comment.svg'
-import { useContext, useEffect, useState } from 'react';
-import { giveUser } from '../../../App';
+import { useEffect, useState } from 'react';
+// import { giveUser } from '../../../App';
 import { CommentsImage } from './Comments/comments-user-profile';
 import style from './postcard.module.css'
 

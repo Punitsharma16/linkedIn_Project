@@ -1,14 +1,14 @@
 import { Link } from 'react-router-dom'
 import './search.css'
-import { createContext, useContext, useEffect, useState } from 'react';
-import { getHeaderWithProjectID } from '../../utils/config';
-import axios from 'axios';
-import { takeValue } from '../../../App';
+// import { createContext, useContext, useEffect, useState } from 'react';
+// import { getHeaderWithProjectID } from '../../utils/config';
+// import axios from 'axios';
+// import { takeValue } from '../../../App';
 
 export const SearchBar = ()=>{
-    const [searchTerm, setSearchTerm] = useState('');
-    const [filteredData, setFilteredData] = useState([]);
-    const [listOfPosts,setListOfPost] = useState([]);
+    // const [searchTerm, setSearchTerm] = useState('');
+    // const [filteredData, setFilteredData] = useState([]);
+    // const [listOfPosts,setListOfPost] = useState([]);
     // const {getData} = useContext(takeValue);
 
     // const posts = async ()=>{
