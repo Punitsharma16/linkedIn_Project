@@ -11,16 +11,19 @@
     margin: 1rem;
     font-size: 20px;
     border-radius: 0.5rem;
+    outline: 1px solid #ddd;
+
 }
 .body{
     display: flex;
+    border-radius: 0.5rem;
     flex-direction: column;
     align-items: center;
     background-color: #ffffff;
     padding: 0.8rem;
     width: 50rem;
     height: 25rem;
-    border: 1px solid black;
+    outline: 1px solid #ddd;
     margin: 1rem;
 
 }
@@ -36,4 +39,18 @@
 .body button:hover{
     cursor: pointer;
     background-color: #ffffff;
+}
+
+@media screen and (max-width:768px){
+    .container{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .heading {
+        width: 27rem;
+    }
+    .body{
+        width: 27rem;
+    }
 }

@@ -15,7 +15,8 @@
     margin-top: 4rem;
     display: flex;
     flex-direction: column;
-    border: 1px solid red;
+    border: 1px solid #999;
+    border-radius: 0.5rem;
     background-color: #fff;
     height: 25rem;
     width: 45rem;
@@ -81,4 +82,10 @@
   .footer input[type='submit']:hover{
     cursor: pointer;
     background-color: rgb(29, 29, 148);
+  }
+
+  @media screen and (max-width:768px){
+    .formContainer{
+      width: 27rem;
+    }
   }

@@ -26,7 +26,7 @@ function CreatePost() {
   const [imageFile, setImageFile] = useState(null);
   const [posts, setPosts] = useState([]);
   // const [showPost,setShowPost] = useState(false);
-  const [like,setLike] = useState(2);
+  const [like,setLike] = useState(0);
   const [likeCount,setLikeCount] = useState(0);
 
   const [comments, setComments] = useState([]);

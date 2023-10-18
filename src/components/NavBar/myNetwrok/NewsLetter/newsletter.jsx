@@ -11,7 +11,7 @@ export const NewsLetterBox = ()=>{
                 <hr style={{borderTop:'#ddd'}}/>
                 <div>Empty</div>
             </section>
-            <div>
+            <div className="hide">
             <AddHome/>
             </div>
         </main>

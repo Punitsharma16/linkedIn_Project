@@ -19,7 +19,7 @@ export const SeenProfile = ()=>{
             </section>
             </aside>
 
-            <aside style={{margin:'1rem'}}>
+            <aside style={{margin:'1rem'}} className='hide'>
                 <AddHome/>
             </aside>
         </main>

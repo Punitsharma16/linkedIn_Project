@@ -9,6 +9,7 @@ import events from './Svgs/events.svg'
 import news from './Svgs/NewsLetter.svg'
 import page from './Svgs/pages.svg'
 import connectBtn from './Svgs/connectBtn.svg'
+// import pending from './Svgs/pending.svg'
 import {useState } from "react"
 // import axios from "axios"
 // import { getHeaderWithAuthTokenAndProjectID } from "../../utils/config"
@@ -47,7 +48,7 @@ export const MyNetwork = ()=>{
                     </div>
                     <div>
                         
-                        <p><img src={followers} alt="follower.." /> Followings & followers</p>
+                        <Link><img src={followers} alt="follower.." /> Followings & followers</Link>
                     </div>
                     <div>
                         
@@ -61,10 +62,12 @@ export const MyNetwork = ()=>{
                         <Link to="/mynetwork/newsletter"><p><img src={news} alt="news.." /> Newsletter</p></Link>
                         <p>0</p>
                     </div>
+                    
                     <div className={style.div}>
-                        <p><img src={page} alt="page.." /> Pages</p>
-                        <p>4</p>
+                    <Link to='/mynetwork/pages'><img src={page} alt="page.." /> Pages</Link>
+                        <span>0</span>
                     </div>
+                   
                 </aside>
                 <div className="hide">
                 <AddHome/>

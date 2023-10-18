@@ -24,6 +24,7 @@ import { ViewProfile } from './components/NavBar/Profile/ViewProfile/ViewProfile
 import { SeenProfile } from './components/NavBar/Profile/AnaliticalProfileView/AnaliticalProfileView';
 import { Activity } from './components/NavBar/Profile/MyActivities/activities';
 import { NavBarWithOutlet } from './components/NavBar/home/NavBarOutlet';
+import { NetworkPage } from './components/NavBar/myNetwrok/NetworkPage/pages';
 
 
 export const MsgModalContext = createContext();
@@ -108,6 +109,7 @@ function App(){
         <Route path='/mynetwork/events' element={<Event/>}/>
         <Route path='/mynetwork/connections' element={<FilterByName/>}/>
         <Route path='/mynetwork/newsletter' element={<NewsLetterBox/>}/>
+        <Route path='/mynetwork/pages' element={<NetworkPage/>}/>
         <Route path='/profile' element={<ViewProfile/>}/>
         <Route path='/analytics/profile-views' element={<SeenProfile/>}/>
         <Route path='recent-activity/all' element={<Activity/>}/>
