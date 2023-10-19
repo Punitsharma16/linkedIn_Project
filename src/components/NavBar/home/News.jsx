@@ -1,6 +1,6 @@
 import './home.css'
 import React, { useState } from 'react';
-import upSvg from "../Assets/showMore.svg"
+// import upSvg from "../Assets/showMore.svg"
 
 export const LinkedinNews = ()=>{
   const initialItems = [

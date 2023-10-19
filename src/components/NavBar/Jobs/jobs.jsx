@@ -1,6 +1,6 @@
 import style from './job.module.css'
-import { Link, NavLink } from "react-router-dom"
-import jobSvg from "./jobs.svg"
+import { Link } from "react-router-dom"
+// import jobSvg from "./jobs.svg"
 import { HomeProfile } from "../home/HomeProfile"
 import { AddHome } from "../Assets/add-Home"
 import { useEffect, useState } from 'react'

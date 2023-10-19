@@ -11,7 +11,7 @@ import save from './saveItem.svg'
 export const ViewProfile = ()=>{
     const navigate = useNavigate();
     const data = userInfo();
-    const {name,email}= data;
+    const {name}= data;
     // const {name} = useParams();
     return(
         <main className={style.mainContainer}>

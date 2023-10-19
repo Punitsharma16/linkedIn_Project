@@ -1,4 +1,4 @@
-import { ProfileLogo } from "../../Profile/profileLogo"
+// import { ProfileLogo } from "../../Profile/profileLogo"
 import { CommentsImage } from "../Comments/comments-user-profile"
 import style from './PostDummy.module.css'
 import media from './media.svg'

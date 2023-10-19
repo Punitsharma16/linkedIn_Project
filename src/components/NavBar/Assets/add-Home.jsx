@@ -1,8 +1,8 @@
 import { ProfileImage } from "./profileImage"
 import './addHome.css'
-import { useState } from "react"
+// import { useState } from "react"
 export const AddHome = ()=>{
-    const [isClicked,setIsClicked] = useState(false);
+    // const [isClicked,setIsClicked] = useState(false);
     // const handleButton = ()=>{
     //     setIsClicked(!isClicked);
     // }

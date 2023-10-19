@@ -1,4 +1,4 @@
-import axios from 'axios';
+// import axios from 'axios';
 // import { getHeaderWithAuthTokenAndProjectID, userInfo } from '../../utils/config';
 import { SentButton } from './SentButton';
 // import { Comments } from './Comments/comment';
@@ -17,7 +17,7 @@ export const PostCard = (props)=>{
     // const {filter} = useContext(giveUser);
     // console.log(filter);
     // console.log(likes);
-    const {title,content,author:{name,profileImage},_id,likeCount,commentCount,channel} = props;
+    const {title,content,author:{name,profileImage},_id,channel} = props;
     // console.log(props);
     // const [likes,setLikes] = useState(0);
     const [showComments,setShowComments] = useState(false);

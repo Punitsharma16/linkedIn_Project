@@ -1,4 +1,4 @@
-import { useContext, useState } from 'react'
+import { useContext } from 'react'
 import style from './SentModal.module.css'
 // import { showModalContext } from '../navbar';
 // import { showModalContext } from '../navbar';

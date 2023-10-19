@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import HomeSvg from '../../Assets/profile.svg'
 import style from './viewProfile.module.css'
-import camera from './camera.svg'
+// import camera from './camera.svg'
 export const ViewProfileImage = ()=>{
     const [image,setImage] = useState(null);
     useEffect(()=>{

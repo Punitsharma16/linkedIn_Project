@@ -16,7 +16,7 @@ export const ProfileInfo = ()=>{
     useEffect(()=>{
         const userData = sessionStorage.getItem('userInfo');
        const dataObject = JSON.parse(userData);
-       const {name,email} = dataObject;
+       const {name} = dataObject;
        setName(name);
     //    setEmail(email);
     },[])

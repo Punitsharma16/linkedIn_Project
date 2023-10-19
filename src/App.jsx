@@ -1,4 +1,4 @@
-import { Route, Routes, useNavigate } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import './App.css';
 import { Login } from './components/Login/Login';
 import { Signup } from './components/Singup/signup';
@@ -42,7 +42,7 @@ function App(){
   //   const {token} = dataToken;
   //   console.log(token);
   
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   const [showHelpModal, setHelpModal] = useState(false);
   const [showModal,setShowModal] = useState(false);
   const [showMsgModal,setMsgModal] = useState(false);
