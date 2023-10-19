@@ -1,34 +1,64 @@
 import style from './primuim.module.css'
 export const Premium = ()=>{
     return(
-        <main className={style.premiumBox}>
-            <p>Get hired 2x faster on average <span>by discovering
-                 over 20 million open jobs <br /> and exploring valuable
-                 resources to help with your search.</span></p>
-                 <button className={style.premiumBtn}>Try Now</button>
-            <section className={style.imageBoxes}>
-                 <div className={style.premiumDiv}>
-                    <p className={style.heading}>InMail credits</p>
-                    <img className={style.hiring} src="https://www.israelhayom.com/wp-content/uploads/2021/04/Now-Hiring-Getty-Images-640x480.jpg" alt="load.." />
-                    <h4>Connect with hiring managers </h4>
-                    <p className={style.content}>Show your interest in an open role with InMail
-                        .It's 2.6x more effetive then emails alone.</p>
-                 </div>
-                 <div  className={style.premiumDiv}>
-                    <p className={style.heading}>Who's Viewed Your Profile</p>
-                    <img className={style.viewProfile} src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQnFFJ8lUBTaoHKuLx7E22NgGMSoPhdgKNVQXk_0jFRG7bg3YfoZ6zVKlvgmR5ddaWy1J4&usqp=CAU" alt="" />
-                    <h4>Turn views into opportunities </h4>
-                    <p className={style.content}>See who's viewed your profile over the last 90
-                        days, and who looks next.</p>
-                 </div>
-                 <div className={style.premiumDiv}>
-                    <p className={style.heading}>LinkedIn Learning courses</p>
-                    <img className={style.courses} src="https://i.ytimg.com/vi/NzoDxzXbb-E/sddefault.jpg" alt="image.."/>
-                    <h4>Sharpen your Skills </h4>
-                    <p className={style.content}>Honw your skills or try something new - access over
-                        15,000 experts-led LinkedIn Learning courses.</p>
-                 </div>
-            </section>     
+        <main className={style.mainContainer}>
+            <section className={style.header}>
+                <h4 style={{fontSize:'20px'}}>Join the millions of LinkedIn members using Premium to get ahead.</h4>
+                        <div className={style.images}>
+                            <div>
+                                 <img src="https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/387.jpg" alt="" />
+                                 <img src="https://newton-project-resume-backend.s3.amazonaws.com/profileImage/64df3febdef71b475f0afb06.jpg" alt="" />
+                                <img src="https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/651.jpg" alt="" />
+                             </div>
+                                  <span>Members use premium</span>
+                        </div>
+                <p>Start your free 1-month trial today. Cancel anytime. We'll send you a reminder 7 days before your trial ends.</p>
+            </section>
+            <section className={style.body}>
+                <div style={{ background: 'linear-gradient(to bottom, green 2%, #fff 2%)' }} className={style.card}>
+                    <p style={{color:'green'}} className={style.cardheading}>Career</p>
+                    <span>Get hired and get ahead</span>
+                    <hr />
+                    <ul>
+                        <li>Stand out and get in touch with hiring managers</li>
+                        <li>See how you compare to other applicants</li>
+                        <li>Learn new skills to advance your Career</li>
+                    </ul>
+                </div>
+                <div style={{ background: 'linear-gradient(to bottom, purple 2%, #fff 2%)' }} className={style.card}>
+                    <p style={{color:'purple'}} className={style.cardheading}>Sales Navigater Core</p>
+                    <span>Unlock sales opporunities</span>
+                    <hr />
+                    <p className={style.pTag}>All Bussiness features, plus:</p>
+                    <ul>
+                        <li>Find leads and accounts in your target market</li>
+                        <li>Get real-time insights for warm outreach</li>
+                        <li>Build trusted relationships with customers and prospects</li>
+                    </ul>
+                </div>
+                <div style={{ background: 'linear-gradient(to bottom, blue 2%, #fff 2%)' }} className={style.card}>
+                    <p style={{color:'blue'}} className={style.cardheading}>Business</p>
+                    <span>Grow and nurture your network</span>
+                    <hr />
+                    <p className={style.pTag}>All Career featurs, plus:</p>
+                    <ul>
+                        <li>Find and contact the right people</li>
+                        <li>Promote and grow your business</li>
+                        <li>Learn new skills to enhance your professional brand</li>
+                    </ul>
+                </div>
+                <div style={{ background: 'linear-gradient(to bottom, brown 2%, #fff 2%)' }} className={style.card}>
+                    <p style={{color:'brown'}} className={style.cardheading}>Recruiter Lite</p>
+                    <span>Find and hire talent</span>
+                    <hr />
+                    <p className={style.pTag}>All Bussiness features, plus:</p>
+                    <ul>
+                        <li>Find great candidates, faster</li>
+                        <li>Contact top talent directly</li>
+                        <li>Build relationships with prospective hires</li>
+                    </ul>
+                </div>
+            </section>
         </main>
     )
 }

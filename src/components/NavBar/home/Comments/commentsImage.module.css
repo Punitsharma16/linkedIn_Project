@@ -12,4 +12,18 @@
         width: 2rem;
         /* background-color: black; */
     }
+    .commentUser{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 3rem;
+        width: 3rem;
+        border-radius: 50%;
+        background-color: #b3adad;
+    }
+    .commentUser img{
+        border-radius: 50%;
+        height: 3rem;
+        width: 3rem;
+    }
     

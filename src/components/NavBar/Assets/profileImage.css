@@ -7,8 +7,22 @@
     border-radius: 50%;
     background-color: #b3adad;
 }
+.user-img{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 5rem;
+    width: 5rem;
+    border-radius: 50%;
+    background-color: #b3adad;
+}
 .profile-img img{
     height: 2.5rem;
     width: 2.5rem;
-    /* background-color: black; */
+}
+
+.user-img img{
+    border-radius: 50%;
+    height: 5rem;
+    width: 5rem;
 }
