@@ -41,6 +41,40 @@
     height: 1rem;
     width: 1rem;
 }
+.modalWrapper{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    z-index: 2;
+    background-color: rgba(0,0,0, 0.8);
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+}
+.jobModalText{
+    margin-top: 4rem;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+    width: 25rem;
+    height: 17rem;
+    padding: 1rem;
+    background-color: #fff;
+    border-radius: 0.5rem;
+}
+.jobModalText p{
+    font-size: 3rem;
+    font-weight: 600;
+    color: red;
+}
+.jobModalText span{
+    font-size: 1.5rem;
+    margin-left: 4rem;
+    margin-bottom: 2rem;
+}
 
 @media screen and (max-width:768px){
     .container{
