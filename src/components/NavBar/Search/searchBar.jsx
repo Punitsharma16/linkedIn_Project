@@ -1,12 +1,17 @@
-import { Link } from 'react-router-dom'
+import { Link, useOutletContext } from 'react-router-dom'
 import './search.css'
+import { seacrhContext } from '../../../App';
+// import { createContext } from 'react'
 // import { createContext, useContext, useEffect, useState } from 'react';
 // import { getHeaderWithProjectID } from '../../utils/config';
 // import axios from 'axios';
 // import { takeValue } from '../../../App';
 
 export const SearchBar = ()=>{
-    // const [searchTerm, setSearchTerm] = useState('');
+
+    // const {setSearchVal} = useOutletContext(seacrhContext);
+
+    // const [searchTerm, setSearchTerm] = useState('');/
     // const [filteredData, setFilteredData] = useState([]);
     // const [listOfPosts,setListOfPost] = useState([]);
     // const {getData} = useContext(takeValue);

@@ -10,6 +10,8 @@ import { HomeProfile } from "./HomeProfile"
 import { DiscoverContainer } from "./discoverMore"
 import { AddHome } from "../Assets/add-Home"
 import CreatePost from "./PostCreate"
+import { useOutletContext } from "react-router-dom"
+import { seacrhContext } from "../../../App"
 // import { PostCreateDummy } from "./PostDummy/PostCreateDummy"
 // import { AppNavbar } from "../navbar"
 
@@ -19,6 +21,8 @@ export const Home = ()=>{
     const [postList,setPostlist] = useState([]);
     const [page,setPage] = useState(1);
     const [isLoading,setIsLoading] = useState(false);
+    const [filterVal,setFilterval] = useState();
+    // const {searchVal} = useOutletContext(seacrhContext);
 
 
     const fetchPosts = async ()=>{
@@ -58,6 +62,16 @@ export const Home = ()=>{
     return () =>  window.removeEventListener("scroll", handleScrolling);
     },[]);
     console.log(postList);
+
+
+    // const filteredPostList = postList.filter((post) => {
+    //     return (
+    //       post.name.toLowerCase().includes(searchVal.toLowerCase()) ||
+    //       post.title.toLowerCase().includes(searchVal.toLowerCase())
+    //     );
+    //   });
+
+
     return(
         <>
         {/* <AppNavbar/> */}

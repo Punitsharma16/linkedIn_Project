@@ -31,6 +31,8 @@ export const MsgModalContext = createContext();
 export const giveUser = createContext();
 export const showModalContext = createContext();
 export const helpModalContext = createContext();
+export const seacrhContext = createContext();
+export const sendSearchVal = createContext();
 // export const helpModalContext = createContext();
 // export const sowPremiumModalContext = createContext();
 // export const MsgModalContext = createContext();
@@ -47,6 +49,7 @@ function App(){
   const [showModal,setShowModal] = useState(false);
   const [showMsgModal,setMsgModal] = useState(false);
   const [filter,setFilter] = useState();
+  const [searchVal,setSearchVal] = useState('');
 
 
 
@@ -83,14 +86,18 @@ function App(){
 
         <Route path='/' element={
           <helpModalContext.Provider value={{setHelpModal}}>
-          {token?<NavBarWithOutlet/>:<Login/>}
+          {token?
+          <seacrhContext.Provider value={{setSearchVal}}>
+            <NavBarWithOutlet/>
+          </seacrhContext.Provider>
+          :<Login/>}
                {showHelpModal && <div className='modal-wrapper'><HelpModal/></div>}
              </helpModalContext.Provider>
         }>
         <Route path='/home' element={
           <showModalContext.Provider value={{setShowModal}}>
           { showModal && <div className='modal-wrapper'><SentModal/></div>}
-          <giveUser.Provider value={{filter}}>
+          <giveUser.Provider value={{searchVal}}>
           <Home/>
           </giveUser.Provider>
         </showModalContext.Provider>
