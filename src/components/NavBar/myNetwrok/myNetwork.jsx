@@ -37,6 +37,61 @@ export const MyNetwork = ()=>{
     // useEffect(()=>{
     //     fetchUser();
     // },[])
+
+    const usersData = [
+        {
+            id: 1,
+            image: 'https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/1130.jpg',
+            name:'Michelle Mayert',
+            role:'Embedded Developer',
+            link:'Based on you profile',
+            button:'Connect'
+        },
+        {
+            id: 2,
+            image: 'https://newton-project-resume-backend.s3.amazonaws.com/profileImage/64df3febdef71b475f0afb06.jpg',
+            name:'Aravindan Elango',
+            role:'Data Science Hub',
+            link:'Based on you profile',
+            button:'Connect'
+
+        },
+        {
+            id: 3,
+            image: 'https://newton-project-resume-backend.s3.amazonaws.com/profileImage/64df3febdef71b475f0afb02.jpg',
+            name:'Diane Bogan',
+            role:'Tech Startups Space',
+            link:'Based on you profile',
+            button:'Connect'
+
+        },
+        {
+            id:'4',
+            image: 'https://newton-project-resume-backend.s3.amazonaws.com/profileImage/64df3febdef71b475f0afae7.jpg',
+            name:'Orlando Leannon',
+            role:'Mobile App Makers',
+            link:'Based on you profile',
+            button:'Connect'
+            
+        }
+    ]
+    const [users, setUsers] = useState(usersData);
+
+  const toggleButtonText = (userId) => {
+    const updatedUsers = users.map((user) => {
+      if (user.id === userId) {
+        const button = user.button === "Connect" ? "Pending" : "Connect";
+        return { ...user, button };
+      }
+      return user;
+    });
+
+    setUsers(updatedUsers);
+  };
+
+// console.log(buttonVal);
+
+
     return(
         <main className={style.MyNetwork}>
             <section >
@@ -97,7 +152,23 @@ export const MyNetwork = ()=>{
                 <section className={style.peopleContainer}>
                     <p>People you may know based on your recent activity</p>
                     <section className={style.knowPeoples}>
-                        <main className={style.peoples}>
+                        {
+                            users.map((user)=>{
+                               return (
+                                
+                               <main key={user.id} className={style.peoples} >
+                                <Link to={`/mynetwork/${user.id}`} className={style.people} style={{color:'#3d3d3d'}}>
+                                    <img src={user.image} alt="" className={style.image}/>
+                                    <span style={{fontWeight:'700'}}>{user.name}</span>
+                                    <span style={{fontWeight:'400',fontSize:"15px"}}>{user.role}</span>
+                                    <p style={{fontSize:'14px',marginTop:'2rem'}}>{user.link}</p>
+                                    </Link>
+                                    <button onClick={()=>toggleButtonText(user.id)} className={style.connectBtn}>{user.button}</button>
+                                </main>
+                                )
+                            })
+                        }
+                        {/* <main className={style.peoples}>
                             <img src='https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/1130.jpg' className={style.image} alt="img.." />
                             <span style={{fontWeight:'700'}}>Michelle Mayert</span>
                             <span style={{fontWeight:'400',fontSize:"15px"}}>Embedded Developer</span>
@@ -124,7 +195,7 @@ export const MyNetwork = ()=>{
                             <span style={{fontWeight:'400',fontSize:"15px"}}>Mobile App Makers</span>
                             <p style={{fontSize:'14px',marginTop:'2rem'}}>Based on you profile</p>
                             <button onClick={()=>setConnect4Value(!connect4)} className={style.connectBtn}><img src={connectBtn} alt="logo.." />{!connect4?"Connect":"Pending.."}</button>
-                        </main>
+                        </main> */}
                     </section>
                 </section>
             </section>

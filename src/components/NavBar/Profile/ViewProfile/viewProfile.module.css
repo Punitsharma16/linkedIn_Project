@@ -78,6 +78,9 @@
     border-radius: 0.5rem;
     background: linear-gradient(to bottom,#5e5c5c67 10rem ,#fff 25%);
 }
+.infoWithImg img{
+    border-radius: 50%;
+}
 .analytic{
     background-color: #fff;
     padding: 1rem;
@@ -163,7 +166,7 @@
     }
     .infoWithImg{
         padding-top: 1.5rem;
-        height: 15rem;
+        height: 20rem;
         background: linear-gradient(to bottom,#5e5c5c67 6.5rem ,#fff 25%);
     }
     .profileImgView{

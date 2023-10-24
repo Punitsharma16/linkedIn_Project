@@ -25,6 +25,10 @@ import { SeenProfile } from './components/NavBar/Profile/AnaliticalProfileView/A
 import { Activity } from './components/NavBar/Profile/MyActivities/activities';
 import { NavBarWithOutlet } from './components/NavBar/home/NavBarOutlet';
 import { NetworkPage } from './components/NavBar/myNetwrok/NetworkPage/pages';
+import { User1 } from './components/NavBar/myNetwrok/users/user1';
+import { User2 } from './components/NavBar/myNetwrok/users/user2';
+import { User3 } from './components/NavBar/myNetwrok/users/user3';
+import { User4 } from './components/NavBar/myNetwrok/users/User4';
 
 
 export const MsgModalContext = createContext();
@@ -120,6 +124,10 @@ function App(){
         <Route path='/profile' element={<ViewProfile/>}/>
         <Route path='/analytics/profile-views' element={<SeenProfile/>}/>
         <Route path='recent-activity/all' element={<Activity/>}/>
+        <Route path='/mynetwork/1' element={<User1/>}/>
+        <Route path='/mynetwork/2' element={<User2/>}/>
+        <Route path='/mynetwork/3' element={<User3/>}/>
+        <Route path='/mynetwork/4' element={<User4/>}/>
         </Route>
       </Routes>
       {/* </takeValue.Provider> */}
