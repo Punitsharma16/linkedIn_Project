@@ -76,7 +76,7 @@ export const Home = ()=>{
           name.includes(searchVal.toLowerCase()) || title.includes(searchVal.toLowerCase())
         );
       });
-      console.log(filteredPostList);
+    //   console.log(filteredPostList);
 
     return(
         <>
