@@ -29,6 +29,7 @@ import { User1 } from './components/NavBar/myNetwrok/users/user1';
 import { User2 } from './components/NavBar/myNetwrok/users/user2';
 import { User3 } from './components/NavBar/myNetwrok/users/user3';
 import { User4 } from './components/NavBar/myNetwrok/users/User4';
+import { MyProvider } from './components/utils/CustomContext';
 
 
 export const MsgModalContext = createContext();
@@ -37,6 +38,7 @@ export const showModalContext = createContext();
 export const helpModalContext = createContext();
 export const seacrhContext = createContext();
 export const sendSearchVal = createContext();
+export const searchValToHome = createContext();
 // export const helpModalContext = createContext();
 // export const sowPremiumModalContext = createContext();
 // export const MsgModalContext = createContext();
@@ -70,6 +72,11 @@ function App(){
     }
   }, [showModal])
 
+  const valueFormSearchBar = (data)=>{
+    setSearchVal(data);
+  }
+  console.log(searchVal);
+
   
   return(
     <main className='main-page'>
@@ -82,7 +89,6 @@ function App(){
 
       
 
-     
       <Routes>
         {/* <Route path='/' element={<AppNavbar/>}/> */}
         {/* <Route path="/login" element={<Login/>}/> */}
@@ -91,7 +97,7 @@ function App(){
         <Route path='/' element={
           <helpModalContext.Provider value={{setHelpModal}}>
           {token?
-          <seacrhContext.Provider value={{setSearchVal}}>
+          <seacrhContext.Provider value={{valueFormSearchBar}}>
             <NavBarWithOutlet/>
           </seacrhContext.Provider>
           :<Login/>}

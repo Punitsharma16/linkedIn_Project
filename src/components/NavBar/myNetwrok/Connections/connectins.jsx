@@ -40,7 +40,6 @@ export const FilterByName = ()=>{
         const filteredResults = ConnectData.filter(item =>
             item.name.toLowerCase().includes(term)
         );
-
         setFilteredData(filteredResults);
     };
 

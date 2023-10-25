@@ -1,6 +1,8 @@
 import { Link, useOutletContext } from 'react-router-dom'
 import './search.css'
-import { seacrhContext } from '../../../App';
+import { seacrhContext, sendSearchVal } from '../../../App';
+import { useContext } from 'react';
+import { MyContext } from '../../utils/CustomContext';
 // import { createContext } from 'react'
 // import { createContext, useContext, useEffect, useState } from 'react';
 // import { getHeaderWithProjectID } from '../../utils/config';
@@ -8,6 +10,7 @@ import { seacrhContext } from '../../../App';
 // import { takeValue } from '../../../App';
 
 export const SearchBar = ()=>{
+    const {valueFormSearchBar} = useContext(seacrhContext);
 
     // const {setSearchVal} = useOutletContext(seacrhContext);
 
@@ -49,7 +52,7 @@ export const SearchBar = ()=>{
         <main className='searchBar'>
             <section style={{display:'flex',gap:'0.4rem'}}>
             <Link to='/home'><img src="https://play-lh.googleusercontent.com/kMofEFLjobZy_bCuaiDogzBcUT-dz3BBbOrIEjJ-hqOabjK8ieuevGe6wlTD15QzOqw=w240-h480-rw" alt="logo.." height="30px"/></Link>
-            <input type="text" name="search" id="search" placeholder='search..' />
+            <input type="text" name="search" id="search" placeholder='search..' onChange={(e)=>valueFormSearchBar(e.target.value)}/>
             {/* <button>search</button> */}
             </section>
             <section>
