@@ -7,12 +7,31 @@ import eye from './eye.svg'
 import network from '../../myNetwrok/Svgs/mynetwork.svg'
 import activity from '../../myNetwrok/Svgs/events.svg'
 import save from './saveItem.svg'
+import { useEffect, useState } from "react";
 
 export const ViewProfile = ()=>{
     const navigate = useNavigate();
     const data = userInfo();
     const {name}= data;
     // const {name} = useParams();
+    const [newText,setNewText] = useState('');
+    const [text, setText] = useState('');
+
+    useEffect(() => {
+        const savedText = localStorage.getItem('savedText');
+        if (savedText) {
+          setText(savedText);
+        }
+      }, []);
+    
+      // Update the state and local storage whenever the textarea value changes
+      const handleTextChange = (e) => {
+        // const newText = e.target.value;
+        setText(newText);
+        localStorage.setItem('savedText', newText);
+      };
+
+
     return(
         <main className={style.mainContainer}>
             <aside className={style.profileInfoContainer}>
@@ -61,9 +80,21 @@ export const ViewProfile = ()=>{
                     </div>
                 </section>
                 <section className={style.about}>
+                    <div className={style.aboutHeading}>
                     <p style={{fontSize:'18px',fontWeight:'500'}}>About</p>
-                    <p style={{fontSize:'15px',fontWeight:'300'}}>Student at newton school</p>
+                    {/* <p style={{fontSize:'15px',fontWeight:'300'}}>Student at newton school</p> */}
+                    <button>Edit</button>
+                    </div>
                 </section>
+
+
+                <aside>
+                    <textarea name="" id="" cols="50" rows="6" onInput={(e)=>setNewText(e.target.value)}></textarea>
+                    <button onClick={handleTextChange}>Add</button>
+                </aside>
+
+
+
                 <section className={style.activity}>
                     <div>
                         <span style={{fontSize:'18px',fontWeight:'500'}}>Activity</span><br />
