@@ -16,6 +16,7 @@ export const ViewProfile = ()=>{
     // const {name} = useParams();
     const [newText,setNewText] = useState('');
     const [text, setText] = useState('');
+    const [aboutModal,setAboutModal] = useState(false);
 
     useEffect(() => {
         const savedText = localStorage.getItem('savedText');
@@ -29,8 +30,9 @@ export const ViewProfile = ()=>{
         // const newText = e.target.value;
         setText(newText);
         localStorage.setItem('savedText', newText);
+        setAboutModal(false);
       };
-
+      console.log(text);
 
     return(
         <main className={style.mainContainer}>
@@ -83,15 +85,24 @@ export const ViewProfile = ()=>{
                     <div className={style.aboutHeading}>
                     <p style={{fontSize:'18px',fontWeight:'500'}}>About</p>
                     {/* <p style={{fontSize:'15px',fontWeight:'300'}}>Student at newton school</p> */}
-                    <button>Edit</button>
+                    <button onClick={()=>setAboutModal(true)}>Edit</button>
                     </div>
+                    <span>{text}</span>
                 </section>
 
 
-                <aside>
-                    <textarea name="" id="" cols="50" rows="6" onInput={(e)=>setNewText(e.target.value)}></textarea>
-                    <button onClick={handleTextChange}>Add</button>
-                </aside>
+                { aboutModal &&
+                    <aside className="modal-wrapper">
+                        <section className={style.aboutModal}>
+                            <button className={style.closeBtn} onClick={()=>setAboutModal(false)}>x</button>
+                            <h2 style={{marginLeft:'1rem'}}>About</h2>
+                            <div className={style.aboutModalDiv}>
+                                <textarea name="" id="" cols="55" rows="9" placeholder="Something about you.." onInput={(e)=>setNewText(e.target.value)}></textarea>
+                                 <button onClick={handleTextChange}>Add</button>
+                            </div>
+                        </section>
+                    </aside>
+                }
 
 
 

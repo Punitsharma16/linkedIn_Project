@@ -107,6 +107,9 @@
     justify-content: space-between;
     font-weight: 200;
 }
+.count-section img{
+    transform: scaleX(-1);
+}
 .button-section{
     display: flex;
     justify-content: space-between;
@@ -126,6 +129,7 @@
 }
 .post-btn img{
     margin-right: 0.4rem;
+    transform: scaleX(-1);
 }
 
 /* comments */
