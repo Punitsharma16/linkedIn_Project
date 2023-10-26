@@ -152,7 +152,7 @@
     border: 1px solid #3d3d3d;
     font-weight: 600;
     font-size: 20;
-    width: 6rem;
+    width: 5rem;
 }
 .closeBtn{
     width: 2rem;
@@ -188,6 +188,53 @@
     outline: 1px solid #ddd;
 
 }
+.experience button{
+    width: 5rem;
+    height: 2rem;
+    border-radius: 1rem;
+    border: 1px solid blue;
+    color: blue;
+    cursor: pointer;
+}
+.experienceModal{
+    border: 2px solid teal;
+    height: 25rem;
+    width: 30rem;
+    background-color: #fff;
+    border-radius: 0.5rem;
+}
+.experienceForm{
+    margin: 1rem;
+}
+.experienceForm input{
+    margin: 0.5rem;
+    padding: 0.3rem;
+    width: 24rem;
+    border-radius: 0.2rem;
+    border: 1px solid #3d3d3d;
+}
+.close{
+    border: 1px solid #3d3d3d;
+    border-radius: 50%;
+    align-self: stretch;
+    margin-left: 28rem;
+    margin-top: 1rem;
+    margin-bottom: 0px;
+    cursor: pointer;
+}
+.experienceForm input[type="date"]{
+    width: 10.4rem;
+}
+.experienceForm input[type="submit"]{
+    width: 5rem;
+    height: 2rem;
+    border: 1px solid darkblue;
+    color: darkblue;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 1rem;
+    margin-top: 1rem;
+}
 .education{
     background-color: #fff;
     padding: 1rem;
@@ -195,6 +242,41 @@
     border-radius: 0.5rem;
     outline: 1px solid #ddd;
 
+}
+.education button{
+    width: 5rem;
+    height: 2rem;
+    border-radius: 1rem;
+    border: 1px solid blue;
+    color: blue;
+    cursor: pointer;
+}
+.educationModal{
+    border: 2px solid teal;
+    height: 23rem;
+    width: 30rem;
+    background-color: #fff;
+    border-radius: 0.5rem;
+}
+.educationModal input{
+    margin: 0.5rem;
+    padding: 0.3rem;
+    width: 24rem;
+    border-radius: 0.2rem;
+    border: 1px solid #3d3d3d;
+}
+.educationModal input[type="date"]{
+    width: 10.4rem;
+}
+.educationModal input[type="submit"]{
+    width: 5rem;
+    height: 2rem;
+    border: 1px solid darkblue;
+    color: darkblue;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 1rem;
+    margin-top: 1rem;
 }
 .sideElements{
     margin: 1rem;
