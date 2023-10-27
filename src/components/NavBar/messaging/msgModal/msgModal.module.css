@@ -18,3 +18,10 @@
         width: 29rem;
     }
 }
+
+@media screen and (max-width:480px){
+    .modal{
+        width: 24rem;
+        margin-right: 1rem;
+    }
+}

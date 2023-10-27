@@ -48,3 +48,17 @@
         height: 1.5rem;
     }
 }
+
+
+
+@media screen and (max-width:480px){
+    .app-navbar{
+        width: 100%;
+    }
+    .navbar-links{
+        gap: 1rem;
+    }
+    .link-logo{
+        gap: 0.3rem;
+    }
+}

@@ -38,3 +38,9 @@
         width: 29rem;
     }
 }
+
+@media screen and (max-width:480px){
+    .eventContainer{
+        width: 24rem;
+    }
+}

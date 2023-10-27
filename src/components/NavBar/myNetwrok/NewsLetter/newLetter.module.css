@@ -42,3 +42,9 @@
         width: 27rem;
     }
 }
+
+@media screen and (max-width:480px){
+    .container{
+        width: 23rem;
+    }
+}

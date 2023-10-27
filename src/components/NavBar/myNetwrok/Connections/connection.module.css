@@ -70,3 +70,12 @@
         width: 28rem;
     }
 }
+
+@media screen and (max-width:480px){
+    .connetionsContainer{
+        width: 22rem;
+    }
+    .searchBar input{
+        width: 11rem;
+    }
+}

@@ -62,3 +62,14 @@
     cursor: pointer;
     background-color: rgb(214, 167, 105);
 }
+
+
+@media screen and (max-width:480px){
+    .modal{
+        width: 21rem;
+        height: 25rem;
+    }
+    .modalBox{
+        width: 20rem;
+    }
+}

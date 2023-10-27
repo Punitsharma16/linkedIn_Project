@@ -78,3 +78,13 @@
         height: 3rem;
     }
 }
+
+@media screen and (max-width:480px){
+    .midBody{
+        width: 22rem;
+        margin-top: 0.3rem;
+    }
+    .activityUser{
+        width: 24rem;
+    }
+}

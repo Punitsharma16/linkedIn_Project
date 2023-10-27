@@ -234,6 +234,7 @@
     font-weight: 600;
     border-radius: 1rem;
     margin-top: 1rem;
+    cursor: pointer;
 }
 .education{
     background-color: #fff;
@@ -277,6 +278,7 @@
     font-weight: 600;
     border-radius: 1rem;
     margin-top: 1rem;
+    cursor: pointer;
 }
 .sideElements{
     margin: 1rem;
@@ -322,4 +324,59 @@
         width: 4rem;
     }
     
+}
+
+@media screen and (max-width:480px){
+    .mainContainer{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-left: 5rem;
+    }
+    .infoWithImg{
+        width: 22rem;
+    }
+    .analytic{
+        width: 22rem;
+    }
+    .resources{
+        width: 22rem;
+    }
+    .about{
+        width: 22rem;
+    }
+    .activity{
+        width: 22rem;
+    }
+    .experience{
+        width: 22rem;
+    }
+    .education{
+        width: 22rem;
+    }
+    .aboutModal{
+        width: 24rem;
+    }
+    .experienceModal{
+        width: 23rem;
+        height: 28rem;
+        margin-right: 3.5rem;
+    }
+    .experienceModal input{
+        width: 19rem;
+    }
+    .educationModal input[type="date"]{
+        width: 7rem;
+    }
+    .educationModal{
+        width: 23rem;
+        height: 28rem;
+        margin-right: 3.5rem;
+    }
+    .educationModal input{
+        width: 19rem;
+    }
+    .educationModal input[type="date"]{
+        width: 7rem;
+    }
 }

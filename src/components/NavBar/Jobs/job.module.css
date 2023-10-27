@@ -86,3 +86,21 @@
         width: 29rem;
     }
 }
+
+@media screen and (max-width:480px){
+    .midSection{
+        justify-content: center;
+        align-items: center;
+    }
+    .MidHeading{
+        width: 23rem;
+    }
+    .MidBody{
+        width: 24rem;
+    }
+    .jobModalText{
+        width: 22rem;
+        margin-right: 1rem;
+        margin-top: 10rem;
+    }
+}

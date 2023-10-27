@@ -95,3 +95,16 @@ a{
 .footer-logo p{
     margin-left: 0.5rem;
 }
+
+
+@media screen and (max-width:480px){
+    .signup-container{
+        margin-left: 0.7rem;
+    }
+    .form input{
+        width: 22rem;
+    }
+    .join-btn{
+        width: 22rem;
+    }
+}

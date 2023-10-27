@@ -58,7 +58,7 @@ export const Login = ()=>{
         <>
         <Navbar/>
         <main className="login-page"> 
-            <section>
+            <section className="login-container">
             <p className="form-heading">Welcome to your professional community</p>
             <form className="login-form" onSubmit={submitForm}>
                 <label htmlFor="email">Email : </label>

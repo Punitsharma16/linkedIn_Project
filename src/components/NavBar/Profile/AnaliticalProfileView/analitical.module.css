@@ -54,3 +54,12 @@
         width: 27rem;
     }
 }
+
+@media screen and (max-width:480px){
+    .heading{
+        width: 23rem;
+    }
+    .body{
+        width: 23rem;
+    }
+}

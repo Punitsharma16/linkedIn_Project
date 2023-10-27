@@ -236,3 +236,19 @@
     }
     
 }
+
+@media screen and (max-width:480px){
+    .home-Profile{
+        width: 24rem;
+    }
+    .post-container{
+        width: 22rem;
+    }
+    .channel-image{
+        width: 22rem;
+        height: 15rem;
+    }
+    .post-btn{
+        width: 7rem;
+    }
+}

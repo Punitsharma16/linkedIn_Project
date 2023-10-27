@@ -89,3 +89,10 @@
       width: 27rem;
     }
   }
+
+  @media screen and (max-width:480px){
+    .formContainer{
+      width: 22rem;
+      margin-right: 0.6rem;
+    }
+  }

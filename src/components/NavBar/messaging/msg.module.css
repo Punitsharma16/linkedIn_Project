@@ -60,3 +60,9 @@
         width: 27rem;
     }
 }
+
+@media screen and (max-width:480px) {
+    .msgBox{
+        width: 22rem;
+    }
+}

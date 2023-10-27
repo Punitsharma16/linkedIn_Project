@@ -243,7 +243,7 @@ export const ViewProfile = ()=>{
                             <span style={{fontSize:'20px',fontWeight:'500'}}>{education1.school}</span><br />
                             <span>{education1.degree}</span><br />
                             <span style={{fontWeight:'600'}}>From </span><span style={{fontSize:'14px'}}> {education1.startDate} </span><span style={{fontWeight:'600'}}> to </span><span style={{fontSize:'14px'}}> {education1.endDate}</span>
-                            <p>Grade: {education1.grade}</p>
+                            <p>Grade: {education1.grade}%</p>
                         </li>
                         <hr />
                     </ul>
@@ -282,7 +282,7 @@ export const ViewProfile = ()=>{
             <div className={style.img}>
         <Link to='/jobs'><img src="https://media.licdn.com/media/AAYQAgTPAAgAAQAAAAAAADVuOvKzTF-3RD6j-qFPqhubBQ.png" alt="imageLoad.." /></Link>
                 </div>
-                <div className={style.add}><AddHome/></div>
+                <div className={`${style.add} hide`}><AddHome/></div>
                 
             </aside>
         </main>
