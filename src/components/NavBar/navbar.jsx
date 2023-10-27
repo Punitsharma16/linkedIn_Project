@@ -57,6 +57,7 @@ export const AppNavbar = ()=>{
         <main className="app-navbar">
             <section>
                <SearchBar/>
+               
             </section>
 
             <section className="navbar-links">
